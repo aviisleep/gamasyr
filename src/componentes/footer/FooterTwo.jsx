@@ -1,4 +1,4 @@
-import logoDorado from "../../assets/logos/logodorado.png";
+import logoGama from "../../assets/logos/logogama.svg";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
@@ -53,7 +53,7 @@ const Footer = () => {
         {/* Logo y Dirección */}
         <div className="col-span-2 text-center md:text-left">
           <div className="flex items-center justify-center gap-4 mb-4 md:justify-start">
-            <img src={logoDorado} alt="Logo Gama" className="w-40" />
+            <img src={logoGama} alt="Logo Gama" className="w-32" />
           </div>
           <p className="mt-2 text-gray-400">Planta: Bogotá, Colombia</p>
         </div>
@@ -93,7 +93,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="mt-6 text-center text-white">
+      <div className="mt-6 text-center text-gray-500">
         Copyright ©2024 All rights reserved | Gama Carrocería & Remolques
       </div>
     </footer>

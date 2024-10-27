@@ -97,7 +97,7 @@ const Carousel = () => {
     {
       image: Gallegos3,
       author: "GAMA",
-      title: "Refinados",
+      title: "REFINADOS",
       topic: "GALLEGOS TRAILERS",
       description:
         "Capacidad de carga 47,500 y 55,000 lts. Fabricados en aluminio. Cilíndricos..",
@@ -130,7 +130,6 @@ const Carousel = () => {
             <img src={slide.image} alt={`Thumbnail ${index + 1}`} />
             <div className="content">
               <div className="title">{slide.title}</div>
-              <div className="description">{slide.description}</div>
             </div>
           </div>
         ))}
