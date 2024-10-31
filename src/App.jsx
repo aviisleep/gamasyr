@@ -4,6 +4,7 @@ import Home from "./pages/Home"; // Ajusta la ruta según tu estructura
 import Contacto from "./pages/Contacto"; // Ajusta la ruta según tu estructura
 import Info from "./pages/Info"; // Ajusta la ruta según tu estructura
 import Gallegos from "./pages/Gallegos";
+import Trielht from "./pages/Trielht";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/info" element={<Info />} />
           <Route path="/gallegos" element={<Gallegos />} />
+          <Route path="/trielht" element={<Trielht />} />
         </Routes>
       </div>
     </Router>

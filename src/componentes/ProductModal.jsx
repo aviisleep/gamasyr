@@ -30,7 +30,7 @@ const ProductModal = ({ product, onClose }) => {
           <img
             src={product.images[currentImageIndex]}
             alt={`${product.title} - ${currentImageIndex + 1}`}
-            className="object-cover w-full h-64 rounded-lg"
+            className="object-cover w-full rounded-lg"
           />
           {/* Botones de navegación */}
           <button

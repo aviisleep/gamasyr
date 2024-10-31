@@ -92,7 +92,9 @@ const Gallegos = () => {
                 className="object-cover w-full h-48"
               />
               <div className="p-4 text-center">
-                <h2 className="text-xl font-semibold">{product.title}</h2>
+                <h2 className="text-xl font-semibold text-gray-800">
+                  {product.title}
+                </h2>
                 <button
                   onClick={() => handleOpenModal(product)}
                   className="text-blue-500 hover:underline"
