@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"; // Importa motion de framer-motion
-import Logop from "../assets/logos/logogamalateral.svg";
+import Logop from "../assets/logos/logodorado.png";
 import Logogallegos from "../assets/imagenes/Logo-Gallegos-1536x552.png";
 import Logotrielht from "../assets/imagenes/logo trielht.png";
 
@@ -22,19 +22,19 @@ const Menu = () => {
   };
 
   return (
-    <header className="relative flex items-center justify-between p-4">
+    <header className="fixed top-0 z-50 flex items-center justify-center w-full font-bold text-white bg-gray-800 max-w-screen-2xl">
       {/* Logo visible en pantallas grandes */}
-      <div className="hidden w-48 px-1 py-2 md:flex">
-        <img src={Logop} alt="Logo Gama SYR" className="w-full h-auto" />
+      <div className="hidden w-40 px-2 py-1 md:flex">
+        <img src={Logop} alt="Logo Gama SYR" className="w-20 mt-1" />
       </div>
 
       {/* Contenedor centrado solo en móviles */}
-      <div className="flex items-center justify-between w-full md:hidden">
-        <div className="w-48 px-1 py-2">
+      <div className="flex items-center justify-between w-full bg-gray-800 md:hidden">
+        <div className="w-48 py-2 px-7">
           <img src={Logop} alt="Logo Gama SYR" className="w-full h-auto" />
         </div>
         <button
-          className="ml-4 text-2xl text-black hover:text-gray-300" // Aumenta el tamaño del icono
+          className="p-4 ml-10 text-2xl text-white hover:text-red" // Aumenta el tamaño del icono
           onClick={toggleMenu}
         >
           &#9776; {/* Icono de menú */}
@@ -42,15 +42,15 @@ const Menu = () => {
       </div>
 
       {/* Menú visible solo en pantallas más grandes */}
-      <nav className="items-center hidden md:flex">
-        <div className="flex space-x-4">
-          <Link to="/" className="text-black hover:text-gray-300">
+      <nav className="items-center hidden bg-gray-800 md:flex">
+        <div className="flex space-x-6">
+          <Link to="/" className="text-white hover:text-gray-200">
             Home
           </Link>
           <div className="relative">
             <button
               onClick={toggleCatalogo}
-              className="text-black hover:text-gray-300"
+              className="text-white hover:text-gray-200"
             >
               Catalogo
             </button>
@@ -58,11 +58,11 @@ const Menu = () => {
               initial={{ height: 0 }}
               animate={{ height: isCatalogoOpen ? "auto" : 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute left-0 z-10 mt-2 overflow-hidden text-black bg-white shadow-lg"
+              className="absolute mt-3 overflow-hidden text-black shadow-xl "
             >
               <Link
                 to="/gallegos"
-                className="flex items-center px-4 py-2 hover:bg-gray-100"
+                className="flex items-center px-5 py-4 hover:bg-gray-800"
               >
                 <img
                   src={Logogallegos}
@@ -84,10 +84,10 @@ const Menu = () => {
               </Link>
             </motion.div>
           </div>
-          <Link to="/contacto" className="text-gray-900 hover:text-gray-300">
+          <Link to="/contacto" className="text-white hover:text-gray-300">
             Contacto
           </Link>
-          <Link to="/info" className="text-gray-900 hover:text-gray-300">
+          <Link to="/info" className="text-white hover:text-gray-300">
             Info
           </Link>
         </div>

@@ -36,6 +36,7 @@ import logotrielht from "../assets/imagenes/logo trielht.png";
 const Trielht = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const handleOpenModal = (product) => {
     setSelectedProduct(product);
@@ -47,12 +48,16 @@ const Trielht = () => {
     setSelectedProduct(null);
   };
 
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
+
   const products = [
     {
       id: 1,
       title: "Aluminio 100%",
       img: [aluminio1],
-      images: [aluminio1, aluminio2, aluminio3, aluminio4, aluminio5], // Imágenes de "cajas secas" para "cajas secas"
+      images: [aluminio1, aluminio2, aluminio3, aluminio4, aluminio5],
       description: "Descripción del producto cajas secas",
       length: "10m",
       corners: "Cuadradas",
@@ -65,7 +70,7 @@ const Trielht = () => {
       id: 2,
       title: "Grano Aluminio",
       img: [granoaluminio1],
-      images: [granoaluminio1, granoaluminio2, granoaluminio3], // Imágenes de "cajas secas" para "cajas secas"
+      images: [granoaluminio1, granoaluminio2, granoaluminio3],
       description: "Descripción del producto Refrijeradas",
       length: "10m",
       corners: "Cuadradas",
@@ -124,7 +129,7 @@ const Trielht = () => {
       title: "Transporte de Aves",
       img: [transporave1],
       images: [transporave1, transporave2, transporave3],
-      description: "Descripción del producto en Transporte de Aves  ",
+      description: "Descripción del producto en Transporte de Aves",
       length: "10m",
       corners: "Cuadradas",
       logisticPosts: "Sí",
@@ -134,8 +139,25 @@ const Trielht = () => {
     },
   ];
 
+  // Filtrar productos según la categoría seleccionada
+  const filtrarProductos =
+    selectedCategory === "all"
+      ? products
+      : products.filter((product) => {
+          if (selectedCategory === "aves")
+            return product.title.includes("Aves");
+          if (selectedCategory === "cerdo")
+            return (
+              product.title.includes("Lechones") ||
+              product.title.includes("Suinos")
+            );
+          if (selectedCategory === "granos")
+            return product.title.includes("Grano");
+          return false;
+        });
+
   return (
-    <div className="gallegos-page">
+    <div className="py-10 gallegos-page">
       <Menu />
 
       {/* Contenedor para el título y el logo */}
@@ -143,36 +165,66 @@ const Trielht = () => {
         <div className="container mx-auto text-center">
           <img src={logotrielht} alt="Logo" className="w-40 mx-auto mb-2" />
           <h2 className="text-3xl font-bold text-white">Catálogo Trielht</h2>
+          <div className="mt-4">
+            <button
+              onClick={() => handleCategoryChange("aves")}
+              className="px-4 py-2 mx-2 text-white bg-blue-500 rounded"
+            >
+              Aves
+            </button>
+            <button
+              onClick={() => handleCategoryChange("cerdo")}
+              className="px-4 py-2 mx-2 text-white bg-blue-500 rounded"
+            >
+              Cerdo
+            </button>
+            <button
+              onClick={() => handleCategoryChange("granos")}
+              className="px-4 py-2 mx-2 text-white bg-blue-500 rounded"
+            >
+              Granos
+            </button>
+            <button
+              onClick={() => handleCategoryChange("all")}
+              className="px-4 py-2 mx-2 text-white bg-gray-500 rounded"
+            >
+              Todos
+            </button>
+          </div>
         </div>
       </div>
 
       <div className="container px-4 py-8 mx-auto catalogo-content">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className="overflow-hidden bg-white rounded-lg shadow-md jet-listing-grid__item"
-            >
-              <img
-                decoding="async"
-                src={product.img}
-                alt={product.title}
-                loading="lazy"
-                className="object-cover w-full h-48"
-              />
-              <div className="p-4 text-center">
-                <h2 className="text-xl font-semibold text-gray-800">
-                  {product.title}
-                </h2>
-                <button
-                  onClick={() => handleOpenModal(product)}
-                  className="text-blue-500 hover:underline"
-                >
-                  Ver más
-                </button>
+          {filtrarProductos.map(
+            (
+              product // Cambiar aquí de products a filtrarProductos
+            ) => (
+              <div
+                key={product.id}
+                className="overflow-hidden bg-white rounded-lg shadow-md jet-listing-grid__item"
+              >
+                <img
+                  decoding="async"
+                  src={product.img}
+                  alt={product.title}
+                  loading="lazy"
+                  className="object-cover w-full h-49"
+                />
+                <div className="p-4 text-center">
+                  <h2 className="text-xl font-semibold text-gray-800">
+                    {product.title}
+                  </h2>
+                  <button
+                    onClick={() => handleOpenModal(product)}
+                    className="text-blue-500 hover:underline"
+                  >
+                    Ver más
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          )}
         </div>
       </div>
 

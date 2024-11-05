@@ -9,11 +9,11 @@ import Contacto from "./Contacto";
 const Home = () => {
   return (
     <div>
-      <Menu className="py-4" />
-      <Carousel className="py-4 mb-4" />
-      <Empresas className="mb-4" />
+      <Menu />
+      <Carousel />
+      <Empresas />
       <Contacto />
-      <Footer className="mb-4" />
+      <Footer />
       <CookieConsent />
     </div>
   );
