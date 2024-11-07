@@ -5,6 +5,7 @@ import Contacto from "./pages/Contacto"; // Ajusta la ruta según tu estructura
 import Info from "./pages/Info"; // Ajusta la ruta según tu estructura
 import Gallegos from "./pages/Gallegos";
 import Trielht from "./pages/Trielht";
+import PostVenta from "./pages/PostVenta";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/info" element={<Info />} />
           <Route path="/gallegos" element={<Gallegos />} />
           <Route path="/trielht" element={<Trielht />} />
+          <Route path="/postVenta" element={<PostVenta />} />
         </Routes>
       </div>
     </Router>
