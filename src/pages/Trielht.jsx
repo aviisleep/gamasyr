@@ -157,14 +157,14 @@ const Trielht = () => {
         });
 
   return (
-    <div className="py-10 gallegos-page">
+    <div className="py-40">
       <Menu />
 
       {/* Contenedor para el título y el logo */}
       <div className="py-6 bg-gray-800">
         <div className="container mx-auto text-center">
           <img src={logotrielht} alt="Logo" className="w-40 mx-auto mb-2" />
-          <h2 className="text-3xl font-bold text-white">Catálogo Trielht</h2>
+          <h2 className="text-3xl font-bold text-white">Catálogo</h2>
           <div className="mt-4">
             <button
               onClick={() => handleCategoryChange("aves")}

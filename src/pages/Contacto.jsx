@@ -8,6 +8,8 @@ import {
   FaFacebook,
   FaLinkedin,
 } from "react-icons/fa";
+import Menu from "../componentes/Menu";
+import SocialBotones from "../componentes/SocialBotones";
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -71,7 +73,9 @@ const Contacto = () => {
 
   return (
     <div className="flex items-center justify-center py-10 text-white bg-gray-900">
-      <div className="container max-w-4xl p-6 mx-auto bg-gray-800 rounded-lg">
+      <Menu />
+      <SocialBotones />
+      <div className="container max-w-4xl p-6 pt-20 mx-auto rounded-lg">
         <h2 className="mb-4 text-2xl font-bold text-center">Cotiza Ahora</h2>
         <p className="text-center">
           Contáctanos por el medio que mejor sea para ti y recibe la atención

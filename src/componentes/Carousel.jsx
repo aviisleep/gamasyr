@@ -86,6 +86,8 @@ const Carousel = () => {
       title: "CAJAS SECAS",
       topic: "GALLEGOS TRAILERS",
       description: "Semi remolque caja seca tipo americano.",
+      infoLink: "/gallegos", // Ruta al catálogo de esta imagen
+      contactLink: "/contacto", // Ruta de contacto
     },
     {
       image: Gallegos2,
@@ -93,6 +95,8 @@ const Carousel = () => {
       title: "REFRIGERADA",
       topic: "GALLEGOS TRAILERS",
       description: "Semi remolque caja seca tipo americano",
+      infoLink: "/gallegos",
+      contactLink: "/contacto",
     },
     {
       image: Gallegos3,
@@ -101,6 +105,8 @@ const Carousel = () => {
       topic: "GALLEGOS TRAILERS",
       description:
         "Capacidad de carga 47,500 y 55,000 lts. Fabricados en aluminio. Cilíndricos..",
+      infoLink: "/gallegos",
+      contactLink: "/contacto",
     },
   ];
 
@@ -111,13 +117,21 @@ const Carousel = () => {
           <div className="item" key={index}>
             <img src={slide.image} alt={`Slide ${index + 1}`} />
             <div className="content">
-              <div className="author">{slide.author}</div>
+              {/* <div className="author">{slide.author}</div> */}
               <div className="title">{slide.title}</div>
-              <div className="topic">{slide.topic}</div>
-              <div className="des">{slide.description}</div>
+              {/* <div className="topic">{slide.topic}</div> */}
+              {/* <div className="des">{slide.description}</div> */}
               <div className="buttons">
-                <button>Información</button>
-                <button>Contactanos</button>
+                {/* Botón Información */}
+                <button onClick={() => (window.location.href = slide.infoLink)}>
+                  Información
+                </button>
+                {/* Botón Contacto */}
+                <button
+                  onClick={() => (window.location.href = slide.contactLink)}
+                >
+                  Contáctanos
+                </button>
               </div>
             </div>
           </div>

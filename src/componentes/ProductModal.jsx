@@ -49,34 +49,38 @@ const ProductModal = ({ product, onClose }) => {
 
         {/* Información del producto a la derecha */}
         <div className="w-full md:w-1/2 md:pl-6">
-          <h2 className="mb-4 text-2xl font-bold">{product.title}</h2>
-          <div className="space-y-2">
+          <h2 className="mb-4 text-2xl font-bold text-gray-800">
+            {product.title}
+          </h2>
+          <div className="space-y-2 text-gray-800">
             <div>
-              <h3 className="font-semibold">Descripción:</h3>
+              <h3 className="font-semibold text-red-500">Descripción:</h3>
               <p>{product.description}</p>
             </div>
             <div>
-              <h3 className="font-semibold">Longitud:</h3>
+              <h3 className="font-semibold text-red-500">Longitud:</h3>
               <p>{product.length}</p>
             </div>
             <div>
-              <h3 className="font-semibold">Esquineras:</h3>
+              <h3 className="font-semibold text-red-500">Esquineras:</h3>
               <p>{product.corners}</p>
             </div>
             <div>
-              <h3 className="font-semibold">Postes logísticos:</h3>
+              <h3 className="font-semibold text-red-500">Postes logísticos:</h3>
               <p>{product.logisticPosts}</p>
             </div>
             <div>
-              <h3 className="font-semibold">Aceros de alta resistencia:</h3>
+              <h3 className="font-semibold text-red-500">
+                Aceros de alta resistencia:
+              </h3>
               <p>{product.highStrengthSteel}</p>
             </div>
             <div>
-              <h3 className="font-semibold">Piso:</h3>
+              <h3 className="font-semibold text-red-500">Piso:</h3>
               <p>{product.floor}</p>
             </div>
             <div>
-              <h3 className="font-semibold">Normatividades:</h3>
+              <h3 className="font-semibold text-red-500">Normatividades:</h3>
               <p>{product.regulations}</p>
             </div>
           </div>

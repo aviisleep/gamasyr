@@ -66,14 +66,14 @@ const Gallegos = () => {
   ];
 
   return (
-    <div className="py-10 gallegos-page">
+    <div className="py-40 gallegos-page">
       <Menu />
 
       {/* Contenedor para el título y el logo */}
       <div className="py-6 bg-gray-800 ">
         <div className="container mx-auto text-center">
           <img src={logogallegos} alt="Logo" className="w-40 mx-auto mb-2" />
-          <h2 className="text-3xl font-bold text-white">Catálogo Gallegos</h2>
+          <h2 className="text-3xl font-bold text-white">Catálogo</h2>
         </div>
       </div>
 
