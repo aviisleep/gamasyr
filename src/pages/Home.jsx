@@ -2,8 +2,7 @@
 import Menu from "../componentes/Menu";
 import Carousel from "../componentes/Carousel";
 import Empresas from "../componentes/Empresas";
-import Footer from "../componentes/footer/Footer";
-import CookieConsent from "../componentes/CookieConsent";
+import BannerConsent from "../componentes/ConsentBanner";
 import Contacto from "./Contacto";
 import SocialBotones from "../componentes/SocialBotones";
 
@@ -22,8 +21,7 @@ const Home = () => {
       </div>
 
       <Contacto />
-      <Footer />
-      <CookieConsent />
+      <BannerConsent />
     </div>
   );
 };

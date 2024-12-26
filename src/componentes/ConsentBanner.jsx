@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
 
-const CookieConsent = () => {
+const ConsentBanner = () => {
   // Estado para controlar la visibilidad del banner
   const [isVisible, setIsVisible] = useState(false);
 
   // Al montar el componente, verificamos si el usuario ya aceptó las cookies
   useEffect(() => {
-    const acceptedCookies = localStorage.getItem("cookiesAccepted");
-    if (!acceptedCookies) {
+    const acceptedConsent = localStorage.getItem("ConsentAccepted");
+    if (!acceptedConsent) {
       setIsVisible(true);
     }
   }, []);
 
   // Función para manejar la aceptación de cookies
   const handleAccept = () => {
-    localStorage.setItem("cookiesAccepted", true);
+    localStorage.setItem("ConsentAccepted", true);
     setIsVisible(false);
   };
 
@@ -52,4 +52,4 @@ const CookieConsent = () => {
   );
 };
 
-export default CookieConsent;
+export default ConsentBanner;
