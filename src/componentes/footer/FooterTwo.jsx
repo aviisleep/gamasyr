@@ -94,7 +94,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-6 text-center text-gray-500">
-        Copyright ©2024 All rights reserved | Gama Carrocería & Remolques
+        Copyright ©2024 All rights reserved | Carrocería & Remolques Gama
       </div>
     </footer>
   );

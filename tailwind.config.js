@@ -10,12 +10,16 @@ export default {
     extend: {
       keyframes: {
         slide: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-100%)" },
+          from: {
+            transform: "translateX(50)",
+          },
+          to: {
+            transform: "translateX(-50%)",
+          },
         },
       },
       animation: {
-        slide: "slide 20s linear infinite",
+        slide: "slide 10s linear infinite",
       },
     },
   },

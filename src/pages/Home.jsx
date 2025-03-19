@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import Menu from "../componentes/Menu";
 import Carousel from "../componentes/Carousel";
 import Empresas from "../componentes/Empresas";
@@ -9,10 +8,10 @@ import SocialBotones from "../componentes/SocialBotones";
 
 const Home = () => {
   return (
-    <div>
+    <div className="relative min-h-screen">
       <Menu />
       <SocialBotones />
-      <Carousel />
+      <Carousel className="mt-24" />
       {/* Contenedor para el título y el logo */}
       <div className="py-6">
         <div className="container mx-auto text-center">

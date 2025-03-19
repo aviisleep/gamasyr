@@ -2,8 +2,6 @@ import PropTypes from "prop-types";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import { useState } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const ProductModal = ({ product, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -21,6 +19,18 @@ const ProductModal = ({ product, onClose }) => {
       prevIndex === 0 ? product.images.length - 1 : prevIndex - 1
     );
   };
+
+  // Lista de propiedades que deseas mostrar
+  const propertiesToShow = [
+    { label: "Descripción", value: product.description },
+    { label: "Longitud", value: product.length },
+    { label: "Esquineras", value: product.corners },
+    { label: "Postes logísticos", value: product.logisticPosts },
+    { label: "Aceros de alta resistencia", value: product.highStrengthSteel },
+    { label: "Piso", value: product.floor },
+    { label: "Normatividades", value: product.regulations },
+    { label: "Capacidad", value: product.capacidad },
+  ];
 
   return (
     <Modal open={true} onClose={onClose} center>
@@ -53,36 +63,17 @@ const ProductModal = ({ product, onClose }) => {
             {product.title}
           </h2>
           <div className="space-y-2 text-gray-800">
-            <div>
-              <h3 className="font-semibold text-red-500">Descripción:</h3>
-              <p>{product.description}</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-red-500">Longitud:</h3>
-              <p>{product.length}</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-red-500">Esquineras:</h3>
-              <p>{product.corners}</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-red-500">Postes logísticos:</h3>
-              <p>{product.logisticPosts}</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-red-500">
-                Aceros de alta resistencia:
-              </h3>
-              <p>{product.highStrengthSteel}</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-red-500">Piso:</h3>
-              <p>{product.floor}</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-red-500">Normatividades:</h3>
-              <p>{product.regulations}</p>
-            </div>
+            {propertiesToShow.map(
+              (property) =>
+                property.value && (
+                  <div key={property.label}>
+                    <h3 className="font-semibold text-red-500">
+                      {property.label}:
+                    </h3>
+                    <p>{property.value}</p>
+                  </div>
+                )
+            )}
           </div>
         </div>
       </div>
@@ -102,6 +93,7 @@ ProductModal.propTypes = {
     highStrengthSteel: PropTypes.string,
     floor: PropTypes.string,
     regulations: PropTypes.string,
+    capacidad: PropTypes.string, // Nueva propiedad opcional
   }).isRequired,
   onClose: PropTypes.func.isRequired,
 };

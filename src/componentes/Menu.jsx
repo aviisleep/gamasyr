@@ -24,30 +24,26 @@ const Menu = () => {
   };
 
   return (
-    <header className="fixed top-0 z-50 flex items-center justify-center w-full h-24 font-bold text-white bg-gray-800 max-w-screen-2xl">
+    <header className="fixed top-0 z-50 flex items-center justify-center w-full h-24 font-bold text-white bg-gray-800">
       {/* Logo con enlace a Inicio */}
       <Link to="/" className="flex items-center h-full px-4">
         <img
           src={Logop}
           alt="Logo Gama SYR"
-          className="hidden w-32 h-auto md:block" // Tamaño del logo aumentado
+          className="hidden w-32 h-auto md:block"
         />
       </Link>
 
       {/* Logo para versión móvil y botón del menú */}
-      <div className="flex items-center w-full justify-CENTER md:hidden">
+      <div className="flex items-center justify-center w-full md:hidden">
         <div className="w-48 py-2 px-7">
-          <img
-            src={Logop}
-            alt="Logo Gama SYR"
-            className="w-full h-auto" // Logo visible solo en pantallas móviles
-          />
+          <img src={Logop} alt="Logo Gama SYR" className="w-full h-auto" />
         </div>
         <button
           className="p-4 ml-10 text-2xl text-white hover:text-red"
           onClick={toggleMenu}
         >
-          {/* Agrega ícono o texto para menú */}☰
+          ☰
         </button>
       </div>
 
@@ -72,7 +68,7 @@ const Menu = () => {
               initial={{ height: 0 }}
               animate={{ height: isCatalogoOpen ? "auto" : 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute mt-3 overflow-hidden bg-gray-800 shadow-xl focus-visible:"
+              className="absolute mt-3 overflow-hidden bg-gray-800 shadow-xl"
             >
               <Link
                 to="/gallegos"
@@ -108,72 +104,78 @@ const Menu = () => {
       </nav>
 
       {isMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="absolute left-0 z-10 w-full text-black bg-white shadow-lg mt-60 md:hidden"
-        >
-          <Link
-            to="/"
-            className="flex items-center px-4 py-2 text-black hover:bg-gray-100"
+        <>
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-5"
             onClick={closeMenu}
+          ></div>
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute left-0 z-10 w-full h-screen text-black bg-white shadow-lg md:hidden"
           >
-            Home
-          </Link>
-          <div className="relative">
-            <button
-              onClick={toggleCatalogo}
-              className="flex items-center w-full px-4 py-2 text-black hover:bg-gray-100"
+            <Link
+              to="/"
+              className="flex items-center px-4 py-2 text-black hover:bg-gray-100"
+              onClick={closeMenu}
             >
-              Catalogo
-              <IoIosArrowDown
-                className={`ml-1 transform transition-transform ${
-                  isCatalogoOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-            <motion.div
-              initial={{ height: 0 }}
-              animate={{ height: isCatalogoOpen ? "auto" : 0 }}
-              transition={{ duration: 0.3 }}
-              className="overflow-hidden text-black bg-white shadow-lg"
+              Home
+            </Link>
+            <div className="relative">
+              <button
+                onClick={toggleCatalogo}
+                className="flex items-center w-full px-4 py-2 text-black hover:bg-gray-100"
+              >
+                Catalogo
+                <IoIosArrowDown
+                  className={`ml-1 transform transition-transform ${
+                    isCatalogoOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <motion.div
+                initial={{ height: 0 }}
+                animate={{ height: isCatalogoOpen ? "auto" : 0 }}
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden text-black bg-white shadow-lg"
+              >
+                <Link
+                  to="/gallegos"
+                  className="flex items-center px-4 py-2 text-black hover:bg-gray-100"
+                  onClick={closeMenu}
+                >
+                  <img
+                    src={Logogallegos}
+                    alt="Gallegos Logo"
+                    className="w-20 h-auto mr-2"
+                  />
+                  Gallegos
+                </Link>
+                <Link
+                  to="/trielht"
+                  className="flex items-center px-4 py-2 text-black hover:bg-gray-100"
+                  onClick={closeMenu}
+                >
+                  <img
+                    src={Logotrielht}
+                    alt="Trielht Logo"
+                    className="w-20 h-auto mr-2"
+                  />
+                  Trielht
+                </Link>
+              </motion.div>
+            </div>
+            <Link
+              to="/contacto"
+              className="flex items-center px-4 py-2 text-black hover:bg-gray-100"
+              onClick={closeMenu}
             >
-              <Link
-                to="/gallegos"
-                className="flex items-center px-4 py-2 text-black hover:bg-gray-100"
-                onClick={closeMenu}
-              >
-                <img
-                  src={Logogallegos}
-                  alt="Gallegos Logo"
-                  className="w-20 h-auto mr-2"
-                />
-                Gallegos
-              </Link>
-              <Link
-                to="/trielht"
-                className="flex items-center px-4 py-2 text-black hover:bg-gray-100"
-                onClick={closeMenu}
-              >
-                <img
-                  src={Logotrielht}
-                  alt="Trielht Logo"
-                  className="w-20 h-auto mr-2"
-                />
-                Trielht
-              </Link>
-            </motion.div>
-          </div>
-          <Link
-            to="/contacto"
-            className="flex items-center px-4 py-2 text-black hover:bg-gray-100"
-            onClick={closeMenu}
-          >
-            Contacto
-          </Link>
-        </motion.div>
+              Contacto
+            </Link>
+          </motion.div>
+        </>
       )}
     </header>
   );

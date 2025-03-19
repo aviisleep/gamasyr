@@ -10,27 +10,30 @@ body {
 a {
   text-decoration: none;
 }
+/* Header */
 header {
-  width: 1140px;
-  max-width: 80%;
+  width: 100%;
+  max-width: 100%;
   margin: auto;
   height: 50px;
   display: flex;
   align-items: center;
   position: relative;
-  z-index: 100;
+  z-index: 999; /* Alto z-index */
 }
+
 header a {
   color: #eee;
   margin-right: 20px;
 }
-/* carousel */
+/* Carousel */
 .carousel {
   height: 100vh;
-  margin-top: 5px;
+  margin-top: 60px; /* Margen suficiente para el menú */
   width: 100vw;
   overflow: hidden;
   position: relative;
+  z-index: 1; /* Menor que el header */
 }
 .carousel .list .item {
   width: 100%;
