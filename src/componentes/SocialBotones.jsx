@@ -60,6 +60,13 @@ const styles = `
     background-color: #1f2937; /* gray-800 */
     color: #ffffff;
   }
+
+  /* Ocultar botones en dispositivos móviles */
+  @media (max-width: 640px) {
+    .social-buttons {
+      display: none;
+    }
+  }
 `;
 
 // Inyectar los estilos globalmente

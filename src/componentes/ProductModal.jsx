@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const ProductModal = ({ product, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -20,32 +21,17 @@ const ProductModal = ({ product, onClose }) => {
     );
   };
 
-  // Lista de propiedades que deseas mostrar
-  const propertiesToShow = [
-    { label: "Descripción", value: product.description },
-    { label: "Longitud", value: product.length },
-    { label: "Esquineras", value: product.corners },
-    { label: "Postes logísticos", value: product.logisticPosts },
-    { label: "Aceros de alta resistencia", value: product.highStrengthSteel },
-    { label: "Piso", value: product.floor },
-    { label: "Normatividades", value: product.regulations },
-    { label: "Capacidad", value: product.capacidad },
-    { label: "Ejes", value: product.ejes },
-    { label: "Material", value: product.material },
-    { label: "Opcional", value: product.opcional },
-    { label: "Suspensión", value: product.suspension },
-    { label: "Incluye", value: product.incluye },
-  ];
-
   return (
     <Modal open={true} onClose={onClose} center>
       <div className="flex flex-col items-center p-4 md:flex-row">
-        {/* Contenedor de la imagen con botones de navegación */}
+        {/* Contenedor de la imagen */}
         <div className="relative w-full mb-4 md:w-1/2 md:mb-0">
           <img
             src={product.images[currentImageIndex]}
             alt={`${product.title} - ${currentImageIndex + 1}`}
-            className="object-cover w-full rounded-lg"
+            className="object-cover w-full h-64 rounded-lg md:h-96"
+            loading="lazy"
+            decoding="async"
           />
           {/* Botones de navegación */}
           <button
@@ -62,24 +48,42 @@ const ProductModal = ({ product, onClose }) => {
           </button>
         </div>
 
-        {/* Información del producto a la derecha */}
+        {/* Información del producto */}
         <div className="w-full md:w-1/2 md:pl-6">
           <h2 className="mb-4 text-2xl font-bold text-gray-800">
             {product.title}
           </h2>
           <div className="space-y-2 text-gray-800">
-            {propertiesToShow.map(
-              (property) =>
-                property.value && (
-                  <div key={property.label}>
-                    <h3 className="font-semibold text-red-500">
-                      {property.label}:
-                    </h3>
-                    <p>{property.value}</p>
+            {Object.entries(product).map(([key, value]) => {
+              if (
+                key !== "id" &&
+                key !== "title" &&
+                key !== "images" &&
+                value
+              ) {
+                return (
+                  <div key={key}>
+                    <h3 className="font-semibold text-red-500">{key}:</h3>
+                    <p>{value}</p>
                   </div>
-                )
-            )}
+                );
+              }
+              return null;
+            })}
           </div>
+
+          {/* Botón de Cotización */}
+          <a
+            href={`https://wa.me/+573015145137?text=Hola,%20me%20gustaría%20cotizar%20el%20producto:%20${encodeURIComponent(
+              product.title
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-2 mt-4 text-white bg-red-500 rounded hover:bg-red-600"
+          >
+            <FaWhatsapp className="mr-2" /> {/* Ícono de WhatsApp */}
+            Cotizar {/* Texto del botón */}
+          </a>
         </div>
       </div>
     </Modal>

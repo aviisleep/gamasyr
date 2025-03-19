@@ -29,7 +29,7 @@ const ModalImages = ({ isOpen, onClose, images }) => {
     >
       <div
         ref={modalRef}
-        className="relative w-full max-w-xl p-6 bg-white rounded-lg overflow-y-auto max-h-[90vh]"
+        className="w-full max-w-lg p-6 bg-white rounded-lg shadow-md sm:max-w-xl"
       >
         {/* Botón de cierre con efecto */}
         <motion.button

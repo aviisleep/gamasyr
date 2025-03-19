@@ -24,7 +24,7 @@ const Menu = () => {
   };
 
   return (
-    <header className="fixed top-0 z-50 flex items-center justify-center w-full h-24 font-bold text-white bg-gray-800">
+    <header className="fixed top-0 z-50 flex items-center justify-center w-full h-24 font-bold text-white bg-gray-800 max-w-screen-2xl">
       {/* Logo con enlace a Inicio */}
       <Link to="/" className="flex items-center h-full px-4">
         <img
@@ -40,7 +40,7 @@ const Menu = () => {
           <img src={Logop} alt="Logo Gama SYR" className="w-full h-auto" />
         </div>
         <button
-          className="p-4 ml-10 text-2xl text-white hover:text-red"
+          className="p-4 text-2xl text-white hover:text-red-500 md:hidden"
           onClick={toggleMenu}
         >
           ☰
@@ -106,19 +106,19 @@ const Menu = () => {
       {isMenuOpen && (
         <>
           <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-5"
+            className="fixed inset-0 z-40 bg-black bg-opacity-50"
             onClick={closeMenu}
           ></div>
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="absolute left-0 z-10 w-full h-screen text-black bg-white shadow-lg md:hidden"
+            className="fixed top-24 left-0 z-50 w-full max-h-[calc(100vh-6rem)] bg-white shadow-lg overflow-y-auto md:hidden"
           >
             <Link
               to="/"
-              className="flex items-center px-4 py-2 text-black hover:bg-gray-100"
+              className="flex items-center px-4 py-3 text-black hover:bg-gray-100"
               onClick={closeMenu}
             >
               Home
@@ -126,7 +126,7 @@ const Menu = () => {
             <div className="relative">
               <button
                 onClick={toggleCatalogo}
-                className="flex items-center w-full px-4 py-2 text-black hover:bg-gray-100"
+                className="flex items-center w-full px-4 py-3 text-black hover:bg-gray-100"
               >
                 Catalogo
                 <IoIosArrowDown
@@ -168,8 +168,15 @@ const Menu = () => {
               </motion.div>
             </div>
             <Link
+              to="/postVenta"
+              className="flex items-center px-4 py-3 text-black hover:bg-gray-100"
+              onClick={closeMenu}
+            >
+              Post Venta
+            </Link>
+            <Link
               to="/contacto"
-              className="flex items-center px-4 py-2 text-black hover:bg-gray-100"
+              className="flex items-center px-4 py-3 text-black hover:bg-gray-100"
               onClick={closeMenu}
             >
               Contacto

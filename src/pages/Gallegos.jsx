@@ -1,9 +1,9 @@
 import Menu from "../componentes/Menu";
-import Footer from "../componentes/footer/Footer";
 import ProductModal from "../componentes/ProductModal";
 import { useState } from "react";
 import { productImages } from "../utils/productImagesGallegos"; // Importa las imágenes organizadas
 import logogallegos from "../assets/imagenes/Logo-Gallegos-1536x552.png";
+import { FaWhatsapp } from "react-icons/fa"; // Importa el ícono de WhatsApp
 
 const Gallegos = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -67,7 +67,7 @@ const Gallegos = () => {
       category: "tanques",
       images: productImages.tanqueleche || [],
       description:
-        "Ideal para el transporte de leche, fructuosa, aceites y más.",
+        "Ideal para el transporte de leche, fructuosa, aceites y más.",
       capacidad: "25,000, 30,000 y 40,000 lts.",
       material:
         "Acero inoxidable, acabado sanitario y Forro de acero inoxidable acabado tipo espejo.",
@@ -229,46 +229,76 @@ const Gallegos = () => {
   return (
     <div className="py-40 gallegos-page">
       <Menu />
-
       {/* Contenedor para el título y el logo */}
       <div className="py-6 bg-gray-800">
         <div className="container mx-auto text-center">
-          <img src={logogallegos} alt="Logo" className="w-40 mx-auto mb-2" />
-          <h2 className="text-3xl font-bold text-white">Catálogo</h2>
-
+          <img
+            src={logogallegos}
+            alt="Logo"
+            className="w-24 mx-auto mb-2 sm:w-40"
+          />
+          <h2 className="text-2xl font-bold text-white sm:text-3xl">
+            Catálogo
+          </h2>
           {/* Botones de categorías */}
-          <div className="flex justify-center mt-4 space-x-4">
-            {[
-              "vanes",
-              "tanques",
-              "botelleros",
-              "camabajas",
-              "dollys",
-              "furgones",
-              "plataformas",
-              "siders",
-              "silos",
-              "tolvas",
-              "volcos",
-              "all",
-            ].map((category) => (
-              <button
-                key={category}
-                onClick={() => handleCategoryChange(category)}
-                className={`px-4 py-2 text-white rounded ${
-                  selectedCategory === category
-                    ? "bg-blue-500"
-                    : "bg-gray-500 hover:bg-blue-500"
-                }`}
-                aria-label={`Filtrar productos de ${category}`}
-              >
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </button>
-            ))}
+          <div className="flex flex-col items-center mt-4 space-y-2 sm:flex-row sm:space-x-4 sm:space-y-0">
+            {/* Menú desplegable para móviles */}
+            <select
+              value={selectedCategory}
+              onChange={(e) => handleCategoryChange(e.target.value)}
+              className="px-4 py-2 text-white bg-gray-500 rounded sm:hidden"
+            >
+              {[
+                "all",
+                "vanes",
+                "tanques",
+                "botelleros",
+                "camabajas",
+                "dollys",
+                "furgones",
+                "plataformas",
+                "siders",
+                "silos",
+                "tolvas",
+                "volcos",
+              ].map((category) => (
+                <option key={category} value={category}>
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </option>
+              ))}
+            </select>
+            {/* Botones visibles solo en pantallas grandes */}
+            <div className="hidden space-x-4 sm:flex">
+              {[
+                "all",
+                "vanes",
+                "tanques",
+                "botelleros",
+                "camabajas",
+                "dollys",
+                "furgones",
+                "plataformas",
+                "siders",
+                "silos",
+                "tolvas",
+                "volcos",
+              ].map((category) => (
+                <button
+                  key={category}
+                  onClick={() => handleCategoryChange(category)}
+                  className={`px-4 py-2 text-white rounded ${
+                    selectedCategory === category
+                      ? "bg-blue-500"
+                      : "bg-gray-500 hover:bg-blue-500"
+                  }`}
+                >
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-
       {/* Catálogo */}
       <div className="container px-4 py-8 mx-auto catalogo-content">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
@@ -288,25 +318,38 @@ const Gallegos = () => {
                 <h2 className="text-xl font-semibold text-gray-800">
                   {product.title}
                 </h2>
-                <button
-                  onClick={() => handleOpenModal(product)}
-                  className="text-blue-500 hover:underline"
-                  aria-label={`Ver detalles de ${product.title}`}
-                >
-                  Ver más
-                </button>
+                <div className="flex justify-center space-x-4">
+                  {/* Botón "Ver más" */}
+                  <button
+                    onClick={() => handleOpenModal(product)}
+                    className="inline-block px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                    aria-label={`Ver detalles de ${product.title}`}
+                  >
+                    Ver más
+                  </button>
+
+                  {/* Botón de WhatsApp */}
+                  <a
+                    href={`https://wa.me/+573015145137?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20${encodeURIComponent(
+                      product.title
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600"
+                  >
+                    <FaWhatsapp className="mr-2" /> {/* Ícono de WhatsApp */}
+                    Cotizar
+                  </a>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
-
       {/* Modal */}
       {isModalOpen && selectedProduct && (
         <ProductModal product={selectedProduct} onClose={handleCloseModal} />
       )}
-
-      <Footer />
     </div>
   );
 };
