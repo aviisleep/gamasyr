@@ -30,6 +30,11 @@ const ProductModal = ({ product, onClose }) => {
     { label: "Piso", value: product.floor },
     { label: "Normatividades", value: product.regulations },
     { label: "Capacidad", value: product.capacidad },
+    { label: "Ejes", value: product.ejes },
+    { label: "Material", value: product.material },
+    { label: "Opcional", value: product.opcional },
+    { label: "Suspensión", value: product.suspension },
+    { label: "Incluye", value: product.incluye },
   ];
 
   return (
@@ -93,7 +98,12 @@ ProductModal.propTypes = {
     highStrengthSteel: PropTypes.string,
     floor: PropTypes.string,
     regulations: PropTypes.string,
-    capacidad: PropTypes.string, // Nueva propiedad opcional
+    capacidad: PropTypes.string,
+    ejes: PropTypes.string,
+    material: PropTypes.string,
+    opcional: PropTypes.string,
+    suspension: PropTypes.string,
+    incluye: PropTypes.string,
   }).isRequired,
   onClose: PropTypes.func.isRequired,
 };
