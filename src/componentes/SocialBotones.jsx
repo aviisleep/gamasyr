@@ -1,18 +1,18 @@
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const SocialBotones = () => {
   return (
     <div className="social-buttons">
       {[
-        { icon: <FaFacebookF />, link: "https://facebook.com" },
-        { icon: <FaInstagram />, link: "https://instagram.com" },
-        { icon: <FaTwitter />, link: "https://twitter.com" },
-        { icon: <FaLinkedinIn />, link: "https://linkedin.com" },
+        {
+          icon: <FaFacebookF />,
+          link: "https://www.facebook.com/profile.php?id=100089640880033",
+        },
+        { icon: <FaInstagram />, link: "https://www.instagram.com/cyr_gama" },
+        {
+          icon: <FaLinkedinIn />,
+          link: "https://www.linkedin.com/company/camiones-remolques-gama/",
+        },
       ].map((social, index) => (
         <a
           key={index}

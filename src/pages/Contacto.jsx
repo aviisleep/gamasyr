@@ -88,21 +88,25 @@ const Contacto = () => {
               <FaEnvelope className="mr-2 text-xl" />
               <div>
                 <h3 className="font-semibold">Correo Electrónico</h3>
-                <p>correo@empresa.com</p>
+                <p>administracion@cyrgama.com</p>
               </div>
             </div>
             <div className="flex items-center mb-4">
               <FaMapMarkerAlt className="mr-2 text-xl" />
               <div>
                 <h3 className="font-semibold">Ubicación</h3>
-                <p>Dirección de la empresa</p>
+                <p>Administrativa</p>
+                <p>Autopista Medellin K.M. 3 T.T.C. Oficina C60, Cota</p>
               </div>
             </div>
             <div className="flex items-center mb-4">
               <FaWhatsapp className="mr-2 text-xl" />
               <div>
                 <h3 className="font-semibold">WhatsApp</h3>
-                <p>+52 123 456 7890</p>
+                <p>+57 301 5145137</p>
+                <p>+57 300 8065644</p>
+                <p>+57 300 8065603</p>
+                <p>+57 300 8067460</p>
               </div>
             </div>
             <div className="flex mt-4 space-x-4">

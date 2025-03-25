@@ -32,17 +32,17 @@ const Footer = () => {
   const socialMedia = [
     {
       platform: "Facebook",
-      url: "https://www.facebook.com",
+      url: "https://www.facebook.com/profile.php?id=100089640880033",
       icon: <FaFacebook size={24} />,
     },
     {
       platform: "Instagram",
-      url: "https://www.instagram.com",
+      url: "https://www.instagram.com/cyr_gama",
       icon: <FaInstagram size={24} />,
     },
     {
       platform: "LinkedIn",
-      url: "https://www.linkedin.com",
+      url: "https://www.linkedin.com/company/camiones-remolques-gama/",
       icon: <FaLinkedin size={24} />,
     },
   ];
@@ -55,7 +55,16 @@ const Footer = () => {
           <div className="flex items-center justify-center gap-4 mb-4 md:justify-start">
             <img src={logoDorado} alt="Logo Gama" className="w-40" />
           </div>
-          <p className="mt-2 text-gray-400">Planta: Bogotá, Colombia</p>
+          <p className="mt-2 text-gray-400">
+            {" "}
+            <p>Administrativa</p>
+            <p>Autopista Medellin K.M. 3 T.T.C. Oficina C60, Cota</p>
+            <p>Servicio</p>
+            <p>
+              Autopista Medellin K.M. 2.2 500 metros por la entrada de parcelas
+              cota, Cota
+            </p>
+          </p>
         </div>
 
         {/* Enlaces de Navegación */}

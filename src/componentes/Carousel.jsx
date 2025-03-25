@@ -83,7 +83,7 @@ const Carousel = () => {
     {
       image: Gallegos1,
       author: "GAMA",
-      title: "CAJAS SECAS",
+      title: "CARGA SECA",
       topic: "GALLEGOS TRAILERS",
       description: "Semi remolque caja seca tipo americano.",
       infoLink: "/gallegos", // Ruta al catálogo de esta imagen
@@ -92,7 +92,7 @@ const Carousel = () => {
     {
       image: Gallegos2,
       author: "GAMA",
-      title: "REFRIGERADA",
+      title: "CARGA REFRIGERADA",
       topic: "GALLEGOS TRAILERS",
       description: "Semi remolque caja seca tipo americano",
       infoLink: "/gallegos",
@@ -101,7 +101,7 @@ const Carousel = () => {
     {
       image: Gallegos3,
       author: "GAMA",
-      title: "REFINADOS",
+      title: "CARGA LIQUIDA",
       topic: "GALLEGOS TRAILERS",
       description:
         "Capacidad de carga 47,500 y 55,000 lts. Fabricados en aluminio. Cilíndricos..",
