@@ -27,7 +27,7 @@ const Gallegos = () => {
   const products = [
     {
       id: 1,
-      title: "Van Secos",
+      title: "Van Seco",
       categories: ["carga seca", "plataformas"], // Ahora es un arreglo de categorías
       images: productImages.vanSeco || [],
       description: "Descripción del producto cajas secas",
@@ -40,7 +40,7 @@ const Gallegos = () => {
     },
     {
       id: 2,
-      title: "Van Refrigerados",
+      title: "Van Refrigerado",
       categories: ["carga refrijerada", "furgones"], // Múltiples categorías
       images: productImages.vanRefrigerado || [],
       description: "Descripción del producto Refrijeradas",
@@ -53,7 +53,7 @@ const Gallegos = () => {
     },
     {
       id: 3,
-      title: "Tanques de Asfalto",
+      title: "Tanque de Asfalto",
       categories: ["carga liquida"],
       images: productImages.tanqueasfalto || [],
       description:
@@ -63,7 +63,7 @@ const Gallegos = () => {
     },
     {
       id: 4,
-      title: "Tanques de Leche",
+      title: "Tanque de Leche",
       categories: ["carga liquida"],
       images: productImages.tanqueleche || [],
       description:
@@ -94,7 +94,7 @@ const Gallegos = () => {
     {
       id: 7,
       title: "Botelleros",
-      categories: ["transporte bebidas"],
+      categories: ["transporte de bebida"],
       images: productImages.botellero || [],
       description: "Tienen compartimentos específicos para evitar roturas.",
       capacidad: "Desde 1 hasta 4 toneladas.",
@@ -103,7 +103,7 @@ const Gallegos = () => {
     {
       id: 8,
       title: "Cama Baja",
-      categories: ["transporte especiales"],
+      categories: ["transportes especiales"],
       images: productImages.camabaja || [],
       description:
         "Acero al carbón, longitud acorde a su necesidad. Transporta maquinaria y equipo pesado.",
@@ -113,7 +113,7 @@ const Gallegos = () => {
     {
       id: 9,
       title: "Dollys",
-      categories: ["transporte especiales"],
+      categories: ["transportes especiales"],
       images: productImages.dollys || [],
       description:
         "Eje direccional opcional, fabricado acero alta resistencia con remache. Argollas ITEC para gancho doble.",
@@ -122,8 +122,8 @@ const Gallegos = () => {
     },
     {
       id: 10,
-      title: "Furgones Composite",
-      categories: ["Equipos sobre chasis"],
+      title: "Furgon Composite",
+      categories: ["equipos sobre chasis"],
       images: productImages.furgones || [],
       description:
         "Fabricados en fibra de vidrio, poliuretano y acero inoxidable. Ideales para transporte de alimentos.",
@@ -144,7 +144,7 @@ const Gallegos = () => {
     {
       id: 12,
       title: "Sider",
-      categories: ["carga seca", "transporte bebidas"],
+      categories: ["carga seca", "transporte de bebida"],
       images: productImages.siders || [],
       description:
         "Caballete intermedio: triplay y alfombrada, piso antiderrapante cal. 14. Concha recta de 1.20 mts. de altura.",
@@ -153,7 +153,7 @@ const Gallegos = () => {
     {
       id: 13,
       title: "Sider Tarp",
-      categories: ["carga seca", "transporte bebidas"],
+      categories: ["carga seca", "transporte de bebida"],
       images: productImages.siderstarp || [],
       description:
         "Ideal para el transporte de rollos, tarimas y carga en general.",
@@ -162,7 +162,7 @@ const Gallegos = () => {
     {
       id: 14,
       title: "Silos",
-      categories: ["transporte especiales"],
+      categories: ["transportes especiales"],
       images: productImages.silos || [],
       description:
         "Silos de alta capacidad y resistencia, diseñados para el almacenamiento seguro y eficiente de productos a granel, garantizando protección y fiabilidad en todo momento.",
@@ -190,8 +190,8 @@ const Gallegos = () => {
     },
     {
       id: 17,
-      title: "Volco Chasis",
-      categories: ["Mineria", "Equipos sobre chasis"],
+      title: "Volco sobre Chasis",
+      categories: ["mineria", "equipos sobre chasis"],
       images: productImages.volcochasis || [],
       description:
         "Transporte de agregados, materiales abrasivos y de alto impacto.",
@@ -201,7 +201,7 @@ const Gallegos = () => {
     {
       id: 18,
       title: "Volco Hibrido",
-      categories: ["Mineria", "Equipos sobre chasis"],
+      categories: ["mineria"],
       images: productImages.volcohibrido || [],
       description:
         "Transporte de agregados, materiales abrasivos y de alto impacto.",
@@ -211,7 +211,7 @@ const Gallegos = () => {
     {
       id: 19,
       title: "Volco Piraña",
-      categories: ["Mineria", "Equipos sobre chasis"],
+      categories: ["mineria"],
       images: productImages.volcopiraña || [],
       description:
         "Transporte de agregados, materiales abrasivos y de alto impacto.",
@@ -252,11 +252,11 @@ const Gallegos = () => {
                 "carga seca",
                 "carga refrijerada",
                 "carga liquida",
-                "transporte bebidas",
+                "transporte de bebida",
                 "transporte especiales",
-                "Equipos sobre chasis",
+                "equipos sobre chasis",
                 "carga a granel",
-                "Mineria",
+                "mineria",
               ].map((category) => (
                 <option key={category} value={category}>
                   {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -270,11 +270,11 @@ const Gallegos = () => {
                 "carga seca",
                 "carga refrijerada",
                 "carga liquida",
-                "transporte bebidas",
-                "transporte especiales",
-                "Equipos sobre chasis",
+                "transporte de bebida",
+                "transportes especiales",
+                "equipos sobre chasis",
                 "carga a granel",
-                "Mineria",
+                "mineria",
               ].map((category) => (
                 <button
                   key={category}

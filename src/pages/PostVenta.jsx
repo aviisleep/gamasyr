@@ -9,7 +9,6 @@ import {
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Menu from "../componentes/Menu";
-import Footer from "../componentes/footer/Footer";
 import Empreqconfia from "../componentes/Empreqconfia";
 import mantenimiento1 from "../assets/imagenes/gallegos11.jpg";
 import mantenimiento2 from "../assets/imagenes/gallegos22.png";
@@ -148,7 +147,6 @@ const PostVenta = () => {
       </section>
 
       <Empreqconfia />
-      <Footer />
 
       {/* Modal de Imágenes */}
       <ModalImagesComponent

@@ -14,7 +14,7 @@ const Home = () => {
       {/* Contenedor para el título y el logo */}
       <div className="py-6">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-800">Catálogo</h2>
+          <h2 className="text-3xl font-bold text-gray-800">Equipos</h2>
           <Empresas />
         </div>
       </div>
