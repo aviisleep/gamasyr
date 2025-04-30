@@ -27,7 +27,7 @@ const Trielht = () => {
   const products = [
     {
       id: 1,
-      title: "Aluminio 100%",
+      titulo: "Aluminio 100%",
       category: "granos",
       images: productImages.aluminio || [], // Asegúrate de que no sea undefined
       description: "Descripción del producto cajas secas",
@@ -40,7 +40,7 @@ const Trielht = () => {
     },
     {
       id: 2,
-      title: "Grano Aluminio",
+      titulo: "Grano Aluminio",
       category: "granos",
       images: productImages.granoaluminio || [], // Asegúrate de que no sea undefined
       description: "Descripción del producto cajas secas",
@@ -53,7 +53,7 @@ const Trielht = () => {
     },
     {
       id: 3,
-      title: "lechones",
+      titulo: "lechones",
       category: "cerdo",
       images: productImages.Lechones || [], // Asegúrate de que no sea undefined
       description: "Descripción del producto cajas secas",
@@ -66,7 +66,7 @@ const Trielht = () => {
     },
     {
       id: 4,
-      title: "Madres y Crias",
+      titulo: "Madres y Crias",
       category: "cerdo",
       images: productImages.madresyCrias || [], // Asegúrate de que no sea undefined
       description: "Descripción del producto cajas secas",
@@ -79,7 +79,7 @@ const Trielht = () => {
     },
     {
       id: 5,
-      title: "Suenos",
+      titulo: "Suenos",
       category: "cerdo",
       images: productImages.suenos || [], // Asegúrate de que no sea undefined
       description: "Descripción del producto cajas secas",
@@ -136,18 +136,18 @@ const Trielht = () => {
               <img
                 decoding="async"
                 src={product.images?.[0] || "ruta/a/imagen/por/defecto.jpg"} // Validación
-                alt={product.title}
+                alt={product.titulo}
                 loading="lazy"
                 className="object-cover w-full h-64"
               />
               <div className="p-4 text-center">
                 <h2 className="text-xl font-semibold text-gray-800">
-                  {product.title}
+                  {product.titulo}
                 </h2>
                 <button
                   onClick={() => handleOpenModal(product)}
                   className="text-blue-500 hover:underline"
-                  aria-label={`Ver detalles de ${product.title}`}
+                  aria-label={`Ver detalles de ${product.titulo}`}
                 >
                   Ver más
                 </button>

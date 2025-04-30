@@ -48,7 +48,7 @@ const Menu = () => {
 
   return (
     <motion.header
-      className={`fixed top-0 z-50 flex items-center justify-between w-full px-8 font-bold text-white transition-all duration-500 overflow-hidden`}
+      className={`fixed top-0 z-50 flex items-center justify-between w-full px-8 font-bold text-white transition-all duration-500 overflow-visible`}
       style={{
         height: isScrolled ? "80px" : "96px",
         background: "rgba(30, 41, 59, 0.9)", // Color gris azulado con transparencia
@@ -123,6 +123,7 @@ const Menu = () => {
             </Link>
           </motion.div>
           <motion.div
+          className="relative"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             transition={{ duration: 0.3 }}
@@ -134,7 +135,7 @@ const Menu = () => {
                 textShadow: "none", // Eliminar sombra del texto
               }}
             >
-              Catálogo
+              Equipos
               <IoIosArrowDown
                 className={`ml-1 transform transition-transform ${
                   isCatalogoOpen ? "rotate-180" : ""
@@ -148,7 +149,7 @@ const Menu = () => {
                 opacity: isCatalogoOpen ? 1 : 0,
               }}
               transition={{ duration: 0.3 }}
-              className="absolute right-0 mt-2 overflow-y-hidden bg-gray-800 rounded-md shadow-xl"
+              className="absolute right-0 mt-2 min-w-max overflow-y-visible bg-gray-800 rounded-md shadow-xl"
             >
               <Link
                 to="/gallegos"
@@ -223,8 +224,10 @@ const Menu = () => {
             onClick={closeMenu}
           ></div>
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ x: 0 }}
+            animate={{ x: isScrolled ? 0 : window.innerWidth < 768 ? 0 : "-50%",
+    scale: isScrolled ? 0.8 : 1,
+    opacity: isFooterVisible ? 0 : 1,}}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
             className="fixed top-24 left-0 z-50 w-full max-h-[calc(100vh-6rem)] bg-gray-800 shadow-lg overflow-y-auto md:hidden"

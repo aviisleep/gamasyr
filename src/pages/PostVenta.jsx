@@ -111,7 +111,7 @@ const PostVenta = () => {
           {/* Servicio de Mantenimiento */}
           <ServicioCard
             icon={<FaTools className="mx-auto text-5xl text-yellow-500" />}
-            title="Mantenimiento"
+            titulo="Mantenimiento"
             description="Realizamos mantenimientos preventivos y correctivos para asegurar
               el funcionamiento óptimo de tu equipo."
             onClick={() => openModal(mantenimientoImages)} // Abre el modal con las imágenes
@@ -120,7 +120,7 @@ const PostVenta = () => {
           {/* Reparaciones Generales */}
           <ServicioCard
             icon={<FaHammer className="mx-auto text-5xl text-yellow-500" />}
-            title="Reparaciones Generales"
+            titulo="Reparaciones Generales"
             description="Ofrecemos soluciones de reparación para diferentes tipos de fallas
               estructurales y mecánicas."
             onClick={() => openModal(reparacionesGeneralesImages)}
@@ -129,7 +129,7 @@ const PostVenta = () => {
           {/* Taller de Colisión */}
           <ServicioCard
             icon={<FaWarehouse className="mx-auto text-5xl text-yellow-500" />}
-            title="Taller de Colisión"
+            titulo="Taller de Colisión"
             description="Contamos con un taller especializado en colisiones para restaurar
               la estructura y seguridad de tus vehículos."
             onClick={() => openModal(tallerColisionImages)}
@@ -138,7 +138,7 @@ const PostVenta = () => {
           {/* Repuestos y Accesorios */}
           <ServicioCard
             icon={<FaCogs className="mx-auto text-5xl text-yellow-500" />}
-            title="Repuestos y Accesorios"
+            titulo="Repuestos y Accesorios"
             description="Venta de repuestos y accesorios originales para mejorar el
               rendimiento y prolongar la vida útil de tus unidades."
             onClick={() => openModal(repuestosAccesoriosImages)}

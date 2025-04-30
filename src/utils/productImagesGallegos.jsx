@@ -235,6 +235,29 @@ export const productImages = {
       import.meta.url
     ).href,
   ],
+  // Chasis porta Contenedor
+  portaContenedor: [
+    new URL(
+      "../assets/productos/gallegos/portacontenedor/portacontenedor1.jpg",
+      import.meta.url
+    ).href,
+    new URL(
+      "../assets/productos/gallegos/portacontenedor/portacontenedor2.jpg",
+      import.meta.url
+    ).href,
+    new URL(
+      "../assets/productos/gallegos/portacontenedor/portacontenedor3.jpg",
+      import.meta.url
+    ).href,
+    new URL(
+      "../assets/productos/gallegos/portacontenedor/portacontenedor4.jpg",
+      import.meta.url
+    ).href,
+    new URL(
+      "../assets/productos/gallegos/portacontenedor/portacontenedor5.jpg",
+      import.meta.url
+    ).href,
+  ],
   // siders
   siders: [
     new URL("../assets/productos/gallegos/sider/sider1.jpg", import.meta.url)
@@ -333,6 +356,29 @@ export const productImages = {
     ).href,
     new URL(
       "../assets/productos/gallegos/tolvadealuminio/tolvaaluminio6.jpg",
+      import.meta.url
+    ).href,
+  ],
+   // tolva cementera
+   tolvaCementera: [
+    new URL(
+      "../assets/productos/gallegos/tolvacementera/tolvacementera1.jpg",
+      import.meta.url
+    ).href,
+    new URL(
+      "../assets/productos/gallegos/tolvacementera/tolvacementera2.jpg",
+      import.meta.url
+    ).href,
+    new URL(
+      "../assets/productos/gallegos/tolvacementera/tolvacementera3.jpg",
+      import.meta.url
+    ).href,
+    new URL(
+      "../assets/productos/gallegos/tolvacementera/tolvacementera4.jpg",
+      import.meta.url
+    ).href,
+    new URL(
+      "../assets/productos/gallegos/tolvacementera/tolvacementera5.jpg",
       import.meta.url
     ).href,
   ],

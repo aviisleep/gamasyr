@@ -78,8 +78,8 @@ const Contacto = () => {
       <div className="container max-w-4xl p-6 pt-20 mx-auto rounded-lg">
         <h2 className="mb-4 text-2xl font-bold text-center">Cotiza Ahora</h2>
         <p className="text-center">
-          Contáctanos por el medio que mejor sea para ti y recibe la atención
-          inmediata de un asesor.
+          Estoy interesado(a) en recibir Información y cotización de los
+          sobre [Producto/Servicio].
         </p>
         <div className="grid grid-cols-1 gap-8 mt-6 lg:grid-cols-2">
           {/* Información de contacto */}
@@ -95,8 +95,8 @@ const Contacto = () => {
               <FaMapMarkerAlt className="mr-2 text-xl" />
               <div>
                 <h3 className="font-semibold">Ubicación</h3>
-                <p>Administrativa</p>
-                <p>Autopista Medellin K.M. 3 T.T.C. Oficina C60, Cota</p>
+                <p>Administración</p>
+                <p>Servicio post venta</p>
               </div>
             </div>
             <div className="flex items-center mb-4">

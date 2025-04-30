@@ -28,7 +28,7 @@ const ProductModal = ({ product, onClose }) => {
         <div className="relative w-full mb-4 md:w-1/2 md:mb-0">
           <img
             src={product.images[currentImageIndex]}
-            alt={`${product.title} - ${currentImageIndex + 1}`}
+            alt={`${product.titulo2} - ${currentImageIndex + 1}`}
             className="object-cover w-full h-64 rounded-lg md:h-96"
             loading="lazy"
             decoding="async"
@@ -51,13 +51,13 @@ const ProductModal = ({ product, onClose }) => {
         {/* Información del producto */}
         <div className="w-full md:w-1/2 md:pl-6">
           <h2 className="mb-4 text-2xl font-bold text-gray-800">
-            {product.title}
+            {product.titulo2}
           </h2>
           <div className="space-y-2 text-gray-800">
             {Object.entries(product).map(([key, value]) => {
               if (
                 key !== "id" &&
-                key !== "title" &&
+                key !== "titulo2" &&
                 key !== "images" &&
                 value
               ) {
@@ -75,7 +75,7 @@ const ProductModal = ({ product, onClose }) => {
           {/* Botón de Cotización */}
           <a
             href={`https://wa.me/+573015145137?text=Hola,%20me%20gustaría%20cotizar%20el%20producto:%20${encodeURIComponent(
-              product.title
+              product.titulo2
             )}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -93,19 +93,28 @@ const ProductModal = ({ product, onClose }) => {
 // Validación de PropTypes
 ProductModal.propTypes = {
   product: PropTypes.shape({
-    title: PropTypes.string.isRequired,
+    titulo2: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
-    description: PropTypes.string,
-    length: PropTypes.string,
-    corners: PropTypes.string,
-    logisticPosts: PropTypes.string,
-    highStrengthSteel: PropTypes.string,
-    floor: PropTypes.string,
-    regulations: PropTypes.string,
+    Descripción: PropTypes.string,
+    Eficiencia: PropTypes.string,
+    Opcionales: PropTypes.string,
+    Accesos: PropTypes.string,
+    Multitemperatura: PropTypes.string,
+    Especializado: PropTypes.string,
     capacidad: PropTypes.string,
+    Capacidades: PropTypes.string,
     ejes: PropTypes.string,
+    Peso: PropTypes.string,
+    Válvulas: PropTypes.string,
+    Sistemas: PropTypes.string,
+    Sistemalimpieza: PropTypes.string,
     material: PropTypes.string,
+    Aplicación: PropTypes.string,
+    Material: PropTypes.string,
     opcional: PropTypes.string,
+    Descargue: PropTypes.string,
+    Aislamiento: PropTypes.string,
+    Diseño: PropTypes.string,
     suspension: PropTypes.string,
     incluye: PropTypes.string,
   }).isRequired,

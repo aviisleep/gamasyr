@@ -83,7 +83,7 @@ const Carousel = () => {
     {
       image: Gallegos1,
       author: "GAMA",
-      title: "CARGA SECA",
+      titulo: "CARGA SECA",
       topic: "GALLEGOS TRAILERS",
       description: "Semi remolque caja seca tipo americano.",
       infoLink: "/gallegos", // Ruta al catálogo de esta imagen
@@ -92,7 +92,7 @@ const Carousel = () => {
     {
       image: Gallegos2,
       author: "GAMA",
-      title: "CARGA REFRIGERADA",
+      titulo: "CARGA REFRIGERADA",
       topic: "GALLEGOS TRAILERS",
       description: "Semi remolque caja seca tipo americano",
       infoLink: "/gallegos",
@@ -101,7 +101,7 @@ const Carousel = () => {
     {
       image: Gallegos3,
       author: "GAMA",
-      title: "CARGA LIQUIDA",
+      titulo: "CARGA LIQUIDA",
       topic: "GALLEGOS TRAILERS",
       description:
         "Capacidad de carga 47,500 y 55,000 lts. Fabricados en aluminio. Cilíndricos..",
@@ -118,7 +118,7 @@ const Carousel = () => {
             <img src={slide.image} alt={`Slide ${index + 1}`} />
             <div className="content">
               {/* <div className="author">{slide.author}</div> */}
-              <div className="title">{slide.title}</div>
+              <div className="titulo">{slide.titulo}</div>
               {/* <div className="topic">{slide.topic}</div> */}
               {/* <div className="des">{slide.description}</div> */}
               <div className="buttons">
@@ -143,7 +143,7 @@ const Carousel = () => {
           <div className="item" key={index}>
             <img src={slide.image} alt={`Thumbnail ${index + 1}`} />
             <div className="content">
-              <div className="title">{slide.title}</div>
+              <div className="titulo">{slide.titulo}</div>
             </div>
           </div>
         ))}

@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   const sections = [
     {
-      title: "Navega",
+      titulo: "Navega",
       links: [
         { name: "Home", url: "/" },
         { name: "Empresa", url: "/empresa" },
@@ -12,7 +12,7 @@ const Footer = () => {
       ],
     },
     {
-      title: "Servicios",
+      titulo: "Servicios",
       links: [
         { name: "Productos", url: "/productos" },
         { name: "Refacciones", url: "/servicios/#Refacciones" },
@@ -20,7 +20,7 @@ const Footer = () => {
       ],
     },
     {
-      title: "Información",
+      titulo: "Información",
       links: [
         { name: "Contacto", url: "#contacto" },
         { name: "Aviso de Privacidad", url: "/privacidad" },
@@ -70,7 +70,7 @@ const Footer = () => {
         {/* Enlaces de Navegación */}
         {sections.map((section, index) => (
           <div key={index} className="flex flex-col text-center md:text-left">
-            <h3 className="mb-2 font-bold">{section.title}</h3>
+            <h3 className="mb-2 font-bold">{section.titulo}</h3>
             <ul>
               {section.links.map((link, idx) => (
                 <li key={idx} className="mb-1">

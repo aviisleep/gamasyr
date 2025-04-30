@@ -27,55 +27,59 @@ const Gallegos = () => {
   const products = [
     {
       id: 1,
-      title: "Van Seco",
+      titulo: "Van Seco",
+      titulo2: "Semiremolque Van Seco Composite - Gallegos Trailers",
       categories: ["carga seca", "plataformas"], // Ahora es un arreglo de categorías
       images: productImages.vanSeco || [],
-      description: "Descripción del producto cajas secas",
-      length: "10m",
-      corners: "Cuadradas",
-      logisticPosts: "Sí",
-      highStrengthSteel: "Alta resistencia",
-      floor: "Antideslizante",
-      regulations: "ISO 9001",
+      Medidas: "43', 53' y 57' pies",
+      Construcción: "Paneles composite de alta resistencia",
+      Peso: "Estructura ultraligera para mayor capacidad de carga útil.",
+      Capacidad: "Máximo volumen de carga con menor tara.",
+      Aplicación: "Transporte de mercancía seca bajo estándares de eficiencia y durabilidad.",
     },
     {
       id: 2,
-      title: "Van Refrigerado",
-      categories: ["carga refrijerada", "furgones"], // Múltiples categorías
+      titulo: "Van Refrigerado",
+      categories: ["carga refrigerada", "furgones"], // Múltiples categorías
       images: productImages.vanRefrigerado || [],
-      description: "Descripción del producto Refrijeradas",
-      length: "Desde 18 hasta 53 pies",
-      corners: "Cuadradas",
-      logisticPosts: "Sí",
-      highStrengthSteel: "Alta resistencia",
-      floor: "Antideslizante",
-      regulations: "ISO 9001",
+      Eficiencia:
+        "Eficiencia térmica alto aislamiento para control óptimo de temperatura.",
+      Opcionales: "Sistemas logísticos internos para gestión de carga.",
+      Accesos: "Puertas laterales disponibles para carga y descarga rápida.",
+      Multitemperatura: "Configuraciones para transporte simultáneo de distintos productos.",
+      Especializado: "Diseño para transporte de carne en canal",
     },
     {
       id: 3,
-      title: "Tanque de Asfalto",
+      titulo: "Tanque de Asfalto",
+      titulo2: "Semirremolque Tanque para Asfalto — Gallegos Trailers",
       categories: ["carga liquida"],
       images: productImages.tanqueasfalto || [],
-      description:
-        "Acero al carbón forrado, acabado espejo. Ideal para transportar asfalto.",
-      capacidad: "30,000 y 40,000 lts.",
-      ejes: "2 y 3 ejes",
+      Material:
+        "Fabricado en acero negro de alta resistencia.",
+        Descargue: "Equipado con válvulas especializadas para el descargue eficiente de asfalto.",
+        Aislamiento: "Aislamiento térmico opción de aislamiento térmico para mantener la temperatura del producto caliente.",
+        Diseño: "Estructura optimizada para el transporte seguro y eficaz",
+        Descripción: "Para un Semirremolque tanque grado alimenticio de Gallegos Trailers, diferentes capacidades, bajo peso y gran capacidad, ventajas vakvulas sanitarias, sistema de cara y autodescarga y sistemas de limpieza e 360 spray ball",
     },
     {
       id: 4,
-      title: "Tanque de Leche",
-      categories: ["carga liquida"],
+      titulo: "Grado Alimenticio",
+      titulo2: "Semirremolque Tanque Grado Alimenticio — Gallegos Trailers",
+      categories: ["carga liquida", "equipos sobre chasis"],
       images: productImages.tanqueleche || [],
-      description:
-        "Ideal para el transporte de leche, fructuosa, aceites y más.",
-      capacidad: "25,000, 30,000 y 40,000 lts.",
-      material:
-        "Acero inoxidable, acabado sanitario y Forro de acero inoxidable acabado tipo espejo.",
-      opcional: "sistema de limpieza integrado.",
+      Capacidades:
+        "Disponibles en diferentes volúmenes según requerimiento operativo.",
+        Peso: "Construcción en acero inox diseño ligero para maximizar la carga útil.",
+        Válvulas: 
+        "Equipado con válvulas sanitarias de alta calidad para manejo seguro de productos alimenticios.",
+        Sistemas: "Sistema de carga y autodescarga eficiente.",
+        Sistemalimpieza: "Sistema de limpieza interna 360° con spray ball para higienización completa y rápida.",
+        Aplicación: "Transporte seguro de líquidos alimenticios bajo estrictos estándares de inocuidad."
     },
     {
       id: 5,
-      title: "Tanques Especiales",
+      titulo: "Tanques Especiales",
       categories: ["carga liquida"],
       images: productImages.tanqueespeciales || [],
       description:
@@ -85,7 +89,7 @@ const Gallegos = () => {
     },
     {
       id: 6,
-      title: "Tanques Refinados",
+      titulo: "Tanques Refinados",
       categories: ["carga liquida"],
       images: productImages.tanquerefinados || [],
       description: "Fabricados en aluminio y cilíndricos.",
@@ -93,7 +97,7 @@ const Gallegos = () => {
     },
     {
       id: 7,
-      title: "Botelleros",
+      titulo: "Botelleros",
       categories: ["transporte de bebida"],
       images: productImages.botellero || [],
       description: "Tienen compartimentos específicos para evitar roturas.",
@@ -102,7 +106,7 @@ const Gallegos = () => {
     },
     {
       id: 8,
-      title: "Cama Baja",
+      titulo: "Cama Baja",
       categories: ["transportes especiales"],
       images: productImages.camabaja || [],
       description:
@@ -112,7 +116,7 @@ const Gallegos = () => {
     },
     {
       id: 9,
-      title: "Dollys",
+      titulo: "Dollys",
       categories: ["transportes especiales"],
       images: productImages.dollys || [],
       description:
@@ -122,7 +126,7 @@ const Gallegos = () => {
     },
     {
       id: 10,
-      title: "Furgon Composite",
+      titulo: "Furgon Composite",
       categories: ["equipos sobre chasis"],
       images: productImages.furgones || [],
       description:
@@ -132,7 +136,7 @@ const Gallegos = () => {
     },
     {
       id: 11,
-      title: "Plataformas",
+      titulo: "Plataformas",
       categories: ["carga seca"],
       images: productImages.plataformas || [],
       description:
@@ -143,7 +147,7 @@ const Gallegos = () => {
     },
     {
       id: 12,
-      title: "Sider",
+      titulo: "Sider",
       categories: ["carga seca", "transporte de bebida"],
       images: productImages.siders || [],
       description:
@@ -152,7 +156,7 @@ const Gallegos = () => {
     },
     {
       id: 13,
-      title: "Sider Tarp",
+      titulo: "Sider Tarp",
       categories: ["carga seca", "transporte de bebida"],
       images: productImages.siderstarp || [],
       description:
@@ -161,7 +165,7 @@ const Gallegos = () => {
     },
     {
       id: 14,
-      title: "Silos",
+      titulo: "Silos",
       categories: ["transportes especiales"],
       images: productImages.silos || [],
       description:
@@ -170,7 +174,7 @@ const Gallegos = () => {
     },
     {
       id: 15,
-      title: "Tolva de Acero",
+      titulo: "Tolva de Acero",
       categories: ["carga a granel"],
       images: productImages.tolvasdeacero || [],
       description:
@@ -180,7 +184,7 @@ const Gallegos = () => {
     },
     {
       id: 16,
-      title: "Tolva de Aluminio",
+      titulo: "Tolva de Aluminio",
       categories: ["carga a granel"],
       images: productImages.tolvasdealuminio || [],
       description:
@@ -190,8 +194,8 @@ const Gallegos = () => {
     },
     {
       id: 17,
-      title: "Volco sobre Chasis",
-      categories: ["mineria", "equipos sobre chasis"],
+      titulo: "Volco sobre Chasis",
+      categories: ["mineria", "equipos sobre chasis", "carga a granel"],
       images: productImages.volcochasis || [],
       description:
         "Transporte de agregados, materiales abrasivos y de alto impacto.",
@@ -200,7 +204,7 @@ const Gallegos = () => {
     },
     {
       id: 18,
-      title: "Volco Hibrido",
+      titulo: "Volco Hibrido",
       categories: ["mineria"],
       images: productImages.volcohibrido || [],
       description:
@@ -210,9 +214,29 @@ const Gallegos = () => {
     },
     {
       id: 19,
-      title: "Volco Piraña",
+      titulo: "Volco Piraña",
       categories: ["mineria"],
       images: productImages.volcopiraña || [],
+      description:
+        "Transporte de agregados, materiales abrasivos y de alto impacto.",
+      capacidad: "12M3 a 29M3",
+      incluye: "puertas de gravedad y puertas neumáticas.",
+    },
+    {
+      id: 20,
+      titulo: "Chasis Porta Contenedor",
+      categories: ["transportes especiales"],
+      images: productImages.portaContenedor || [],
+      description:
+        "Transporte de agregados, materiales abrasivos y de alto impacto.",
+      capacidad: "12M3 a 29M3",
+      incluye: "puertas de gravedad y puertas neumáticas.",
+    },
+    {
+      id: 21,
+      titulo: "Tolvas Cementeras",
+      categories: ["carga a granel", "equipos sobre chasis", ],
+      images: productImages.tolvaCementera || [],
       description:
         "Transporte de agregados, materiales abrasivos y de alto impacto.",
       capacidad: "12M3 a 29M3",
@@ -250,7 +274,7 @@ const Gallegos = () => {
               {[
                 "all",
                 "carga seca",
-                "carga refrijerada",
+                "carga refrigerada",
                 "carga liquida",
                 "transporte de bebida",
                 "transporte especiales",
@@ -268,7 +292,7 @@ const Gallegos = () => {
               {[
                 "all",
                 "carga seca",
-                "carga refrijerada",
+                "carga refrigerada",
                 "carga liquida",
                 "transporte de bebida",
                 "transportes especiales",
@@ -303,27 +327,27 @@ const Gallegos = () => {
               <img
                 decoding="async"
                 src={product.images?.[0] || "ruta/a/imagen/por/defecto.jpg"}
-                alt={product.title}
+                alt={product.titulo}
                 loading="lazy"
                 className="object-cover w-full h-64"
               />
               <div className="p-4 text-center">
                 <h2 className="text-xl font-semibold text-gray-800">
-                  {product.title}
+                  {product.titulo}
                 </h2>
                 <div className="flex justify-center space-x-4">
                   {/* Botón "Ver más" */}
                   <button
                     onClick={() => handleOpenModal(product)}
                     className="inline-block px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
-                    aria-label={`Ver detalles de ${product.title}`}
+                    aria-label={`Ver detalles de ${product.titulo2}`}
                   >
                     Ver más
                   </button>
                   {/* Botón de WhatsApp */}
                   <a
                     href={`https://wa.me/+573015145137?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20${encodeURIComponent(
-                      product.title
+                      product.titulo2
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
