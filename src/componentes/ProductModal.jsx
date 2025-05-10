@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { Modal } from "react-responsive-modal";
-import "react-responsive-modal/styles.css";
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import "react-responsive-modal/styles.css";
 
 const ProductModal = ({ product, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -28,7 +28,7 @@ const ProductModal = ({ product, onClose }) => {
         <div className="relative w-full mb-4 md:w-1/2 md:mb-0">
           <img
             src={product.images[currentImageIndex]}
-            alt={`${product.titulo2} - ${currentImageIndex + 1}`}
+            alt={`${product.Titulo2} - ${currentImageIndex + 1}`}
             className="object-cover w-full h-64 rounded-lg md:h-96"
             loading="lazy"
             decoding="async"
@@ -51,20 +51,22 @@ const ProductModal = ({ product, onClose }) => {
         {/* Información del producto */}
         <div className="w-full md:w-1/2 md:pl-6">
           <h2 className="mb-4 text-2xl font-bold text-gray-800">
-            {product.titulo2}
+            {product.Titulo2}
           </h2>
           <div className="space-y-2 text-gray-800">
             {Object.entries(product).map(([key, value]) => {
               if (
                 key !== "id" &&
-                key !== "titulo2" &&
+                key !== "Titulo" &&
+                key !== "Titulo2" &&
+                key !== "categories" &&
                 key !== "images" &&
                 value
               ) {
                 return (
                   <div key={key}>
-                    <h3 className="font-semibold text-red-500">{key}:</h3>
-                    <p>{value}</p>
+                    <h3 className="font-semibold text-red-500">{key.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase())}:</h3>
+                    <p className="whitespace-pre-line">{value}</p>
                   </div>
                 );
               }
@@ -75,7 +77,7 @@ const ProductModal = ({ product, onClose }) => {
           {/* Botón de Cotización */}
           <a
             href={`https://wa.me/+573015145137?text=Hola,%20me%20gustaría%20cotizar%20el%20producto:%20${encodeURIComponent(
-              product.titulo2
+              product.Titulo2
             )}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -93,7 +95,7 @@ const ProductModal = ({ product, onClose }) => {
 // Validación de PropTypes
 ProductModal.propTypes = {
   product: PropTypes.shape({
-    titulo2: PropTypes.string.isRequired,
+    Titulo2: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
     Descripción: PropTypes.string,
     Eficiencia: PropTypes.string,
@@ -117,6 +119,7 @@ ProductModal.propTypes = {
     Diseño: PropTypes.string,
     suspension: PropTypes.string,
     incluye: PropTypes.string,
+    Ideal: PropTypes.string,
   }).isRequired,
   onClose: PropTypes.func.isRequired,
 };

@@ -1,6 +1,6 @@
+import { useState } from "react";
 import Menu from "../componentes/Menu";
 import ProductModal from "../componentes/ProductModal";
-import { useState } from "react";
 import { productImages } from "../utils/productImagesGallegos"; // Importa las imágenes organizadas
 import logogallegos from "../assets/imagenes/Logo-Gallegos-1536x552.png";
 import { FaWhatsapp } from "react-icons/fa"; // Importa el ícono de WhatsApp
@@ -27,8 +27,8 @@ const Gallegos = () => {
   const products = [
     {
       id: 1,
-      titulo: "Van Seco",
-      titulo2: "Semiremolque Van Seco Composite - Gallegos Trailers",
+      Titulo: "Van Seco",
+      Titulo2: "Semiremolque Van Seco Composite - Gallegos Trailers",
       categories: ["carga seca", "plataformas"], // Ahora es un arreglo de categorías
       images: productImages.vanSeco || [],
       Medidas: "43', 53' y 57' pies",
@@ -39,7 +39,8 @@ const Gallegos = () => {
     },
     {
       id: 2,
-      titulo: "Van Refrigerado",
+      Titulo: "Van Refrigerado",
+      Titulo2: "Semirremolque Van Refrigerado — Gallegos Trailers",
       categories: ["carga refrigerada", "furgones"], // Múltiples categorías
       images: productImages.vanRefrigerado || [],
       Eficiencia:
@@ -51,89 +52,92 @@ const Gallegos = () => {
     },
     {
       id: 3,
-      titulo: "Tanque de Asfalto",
-      titulo2: "Semirremolque Tanque para Asfalto — Gallegos Trailers",
+      Titulo: "Tanque de Asfalto",
+      Titulo2: "Semirremolque Tanque para Asfalto — Gallegos Trailers",
       categories: ["carga liquida"],
       images: productImages.tanqueasfalto || [],
-      Material:
-        "Fabricado en acero negro de alta resistencia.",
-        Descargue: "Equipado con válvulas especializadas para el descargue eficiente de asfalto.",
-        Aislamiento: "Aislamiento térmico opción de aislamiento térmico para mantener la temperatura del producto caliente.",
-        Diseño: "Estructura optimizada para el transporte seguro y eficaz",
-        Descripción: "Para un Semirremolque tanque grado alimenticio de Gallegos Trailers, diferentes capacidades, bajo peso y gran capacidad, ventajas vakvulas sanitarias, sistema de cara y autodescarga y sistemas de limpieza e 360 spray ball",
+      Material: "Fabricado en acero negro de alta resistencia.",
+      Descargue: "Equipado con válvulas especializadas para el descargue eficiente de asfalto.",
+      Aislamiento: "Aislamiento térmico opción de aislamiento térmico para mantener la temperatura del producto caliente.",
+      Diseño: "Estructura optimizada para el transporte seguro y eficaz",
+      Descripción: "Para un Semirremolque tanque grado alimenticio de Gallegos Trailers, diferentes capacidades, bajo peso y gran capacidad, ventajas vakvulas sanitarias, sistema de cara y autodescarga y sistemas de limpieza e 360 spray ball",
     },
     {
       id: 4,
-      titulo: "Grado Alimenticio",
-      titulo2: "Semirremolque Tanque Grado Alimenticio — Gallegos Trailers",
+      Titulo: "Grado Alimenticio",
+      Titulo2: "Semirremolque Tanque Grado Alimenticio — Gallegos Trailers",
       categories: ["carga liquida", "equipos sobre chasis"],
       images: productImages.tanqueleche || [],
       Capacidades:
         "Disponibles en diferentes volúmenes según requerimiento operativo.",
-        Peso: "Construcción en acero inox diseño ligero para maximizar la carga útil.",
-        Válvulas: 
-        "Equipado con válvulas sanitarias de alta calidad para manejo seguro de productos alimenticios.",
-        Sistemas: "Sistema de carga y autodescarga eficiente.",
-        Sistemalimpieza: "Sistema de limpieza interna 360° con spray ball para higienización completa y rápida.",
-        Aplicación: "Transporte seguro de líquidos alimenticios bajo estrictos estándares de inocuidad."
+      Peso: "Construcción en acero inox diseño ligero para maximizar la carga útil.",
+      Válvulas: "Equipado con válvulas sanitarias de alta calidad para manejo seguro de productos alimenticios.",
+      Sistemas: "Sistema de carga y autodescarga eficiente.",
+      Sistema_limpieza: "Sistema de limpieza interna 360° con spray ball para higienización completa y rápida.",
+      Aplicación: "Transporte seguro de líquidos alimenticios bajo estrictos estándares de inocuidad."
     },
     {
       id: 5,
-      titulo: "Tanques Especiales",
+      Titulo: "Tanques Especiales",
       categories: ["carga liquida"],
       images: productImages.tanqueespeciales || [],
-      description:
+      Description:
         "Elaborado en acero al carbón, cumple con SCT 312 y DOT 412. Ideal para transporar ácidos y químicos en general.",
-      capacidad: "21,000 Lts – 28,000 Lts",
-      ejes: "2 y 3 ejes",
+      Capacidad: "21,000 Lts – 28,000 Lts",
+      Ejes: "2 y 3 ejes",
     },
     {
       id: 6,
-      titulo: "Tanques Refinados",
+      Titulo: "Tanques Refinados",
       categories: ["carga liquida"],
       images: productImages.tanquerefinados || [],
-      description: "Fabricados en aluminio y cilíndricos.",
-      capacidad: "47,500 y 55,000 lts.",
+      Description: "Fabricados en aluminio y cilíndricos.",
+      Capacidad: "47,500 y 55,000 lts.",
     },
     {
       id: 7,
-      titulo: "Botelleros",
+      Titulo: "Botelleros",
+      Titulo2: "Carrocería para Transporte de Bebidas — Gallegos Trailers",
       categories: ["transporte de bebida"],
       images: productImages.botellero || [],
-      description: "Tienen compartimentos específicos para evitar roturas.",
-      capacidad: "Desde 1 hasta 4 toneladas.",
-      ejes: "2 y 3 ejes.",
+      Materiales: "Disponible en aluminio o versión híbrida (acero/aluminio).",
+      Diseño: "Personalización total según requerimiento operativo y tipo de carga.",
+      Capacidad: "Gran volumen de carga para optimizar la distribución de bebidas.",
+      Ventajas: "Estructura ligera, alta resistencia y máxima eficiencia logística.",
     },
     {
       id: 8,
-      titulo: "Cama Baja",
+      Titulo: "Cama Baja",
+      Titulo2: "Semirremolque Camabaja Cuello Fijo — Gallegos Trailers",
       categories: ["transportes especiales"],
       images: productImages.camabaja || [],
-      description:
-        "Acero al carbón, longitud acorde a su necesidad. Transporta maquinaria y equipo pesado.",
-      capacidad: "Desde 30 tons - 100 tons",
-      ejes: "2 / 3 / 4 Ejes.",
+      Estructura: "reforzada en acero de alta resistencia. Capacidades de carga variables según configuración. ",
+      Disponible: "Rampas traseras hidráulicas o manuales. Piso en acero, madera o combinaciones especiales. ",
+      Ideal: "transporte de maquinaria pesada y cargas sobredimensionadas. Gran capacidad de soporte y estabilidad en operación.",
     },
     {
       id: 9,
-      titulo: "Dollys",
+      Titulo: "Dollys",
+      Titulo2: "Dolly Tipo A - Gallegos Trailers",
       categories: ["transportes especiales"],
       images: productImages.dollys || [],
-      description:
-        "Eje direccional opcional, fabricado acero alta resistencia con remache. Argollas ITEC para gancho doble.",
-      capacidad: "2.5 Tons",
-      ejes: "2 ejes.",
+      Descripción:
+        `El Dolly Tipo A de Gallegos Trailers está diseñado para facilitar el transporte de cargas 
+        pesadas y largas, proporcionando estabilidad adicional a vehículos de remolque.\n
+Con una estructura robusta y resistente, este dolly ofrece una capacidad de carga óptima para facilitar maniobras y distribuir el peso de manera eficiente. 
+Su configuración de ejes en tándem o múltiple permite un rendimiento superior en condiciones exigentes, 
+siendo ideal para aplicaciones de transporte industrial y maquinaria pesada.`,
+      
     },
     {
       id: 10,
-      titulo: "Furgon Composite",
+      Titulo: "Furgon Composite",
+      Titulo2: "Furgón sobre Chasis Composite - Gallegos Trailers",
       categories: ["equipos sobre chasis"],
       images: productImages.furgones || [],
-      description:
-        "Fabricados en fibra de vidrio, poliuretano y acero inoxidable. Ideales para transporte de alimentos.",
-      capacidad: "Desde 30 hasta 53 pies.",
-      ejes: "2 ejes.",
-    },
+      Descripción:
+        `El Furgón sobre Chasis Composite de Gallegos Trailers está diseñado para ofrecer gran capacidad de carga y resistencia, con un enfoque especial en la asepsia.\n\nSu estructura compuesta garantiza durabilidad y ligereza, mientras que su configuración de piso en aluminio, acero o madera asegura versatilidad según las necesidades del transporte.\n\nIdeal para el traslado de productos alimenticios, químicos y otros bienes sensibles, este furgón ofrece máxima seguridad y eficiencia, cumpliendo con estándares rigurosos de higiene y facilidad de limpieza.\n\nPerfecto para operaciones en sectores que requieren condiciones de alta calidad y control.`,
+     },
     {
       id: 11,
       titulo: "Plataformas",
@@ -327,13 +331,13 @@ const Gallegos = () => {
               <img
                 decoding="async"
                 src={product.images?.[0] || "ruta/a/imagen/por/defecto.jpg"}
-                alt={product.titulo}
+                alt={product.Titulo}
                 loading="lazy"
                 className="object-cover w-full h-64"
               />
               <div className="p-4 text-center">
                 <h2 className="text-xl font-semibold text-gray-800">
-                  {product.titulo}
+                  {product.Titulo}
                 </h2>
                 <div className="flex justify-center space-x-4">
                   {/* Botón "Ver más" */}
