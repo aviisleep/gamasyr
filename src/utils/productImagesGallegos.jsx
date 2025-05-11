@@ -451,4 +451,27 @@ export const productImages = {
       import.meta.url
     ).href,
   ],
+   // chasis porta contenedor
+  chasisPortaContenedor: [
+    new URL(
+      "../assets/productos/gallegos/chasisportacontenedor/chasisportacontenedor1.jpg",
+      import.meta.url
+    ).href,
+    new URL(
+      "../assets/productos/gallegos/chasisportacontenedor/chasisportacontenedor2.jpg",
+      import.meta.url
+    ).href,
+    new URL(
+      "../assets/productos/gallegos/chasisportacontenedor/chasisportacontenedor3.jpg",
+      import.meta.url
+    ).href,
+    new URL(
+      "../assets/productos/gallegos/chasisportacontenedor/chasisportacontenedor4.jpg",
+      import.meta.url
+    ).href,
+    new URL(
+      "../assets/productos/gallegos/chasisportacontenedor/chasisportacontenedor5.jpg",
+      import.meta.url
+    ).href,
+  ],
 };

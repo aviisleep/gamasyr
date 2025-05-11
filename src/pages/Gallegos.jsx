@@ -261,9 +261,9 @@ Su diseño optimizado facilita la descarga rápida y controlada del material, as
       categories: ["transportes especiales"],
       images: productImages.portaContenedor || [],
       Descripción:
-        "Transporte de agregados, materiales abrasivos y de alto impacto.",
-      Capacidad: "12M3 a 29M3",
-      Incluye: "puertas de gravedad y puertas neumáticas.",
+        `El Chasis Porta Contenedor de Gallegos Trailers está diseñado para ofrecer una solución eficiente y robusta para el transporte de contenedores. Con una construcción sólida y resistente, este chasis garantiza un manejo seguro y eficiente de cargas pesadas, optimizando el rendimiento del remolque en operaciones exigentes.
+Su diseño especializado permite una carga y descarga rápida y controlada, asegurando un flujo constante de material y minimizando el tiempo de inactividad. Ideal para la industria del transporte marítimo y terrestre, el Chasis Porta Contenedor es la elección perfecta para quienes buscan durabilidad y eficiencia en sus operaciones.`,
+
     },
     {
       id: 21,
@@ -272,7 +272,8 @@ Su diseño optimizado facilita la descarga rápida y controlada del material, as
       categories: ["carga a granel", "equipos sobre chasis", ],
       images: productImages.tolvaCementera || [],
       Descripción:
-        "Transporte de agregados, materiales abrasivos y de alto impacto.",
+        `Las Tolvas Cementeras de Gallegos Trailers están diseñadas para ofrecer una solución eficiente y robusta para el transporte de cemento y otros materiales a granel. Con una construcción sólida y resistente, estas tolvas garantizan un manejo seguro y eficiente de cargas pesadas, optimizando el rendimiento del remolque en operaciones exigentes.
+Su diseño especializado permite una descarga rápida y controlada, asegurando un flujo constante de material y minimizando el tiempo de inactividad. Ideal para la industria de la construcción y el transporte de materiales pesados, las Tolvas Cementeras son la elección perfecta para quienes buscan durabilidad y eficiencia en sus operaciones.`,
       Capacidad: "12M3 a 29M3",
       Incluye: "puertas de gravedad y puertas neumáticas.",
     },
