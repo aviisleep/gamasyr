@@ -95,8 +95,10 @@ const Contacto = () => {
               <FaMapMarkerAlt className="mr-2 text-xl" />
               <div>
                 <h3 className="font-semibold">Ubicación</h3>
-                <p>Administración</p>
+                <p>Sede Administrativa</p>
+                <p>Autopista medellin KM 3 TTC C-60</p>
                 <p>Servicio post venta</p>
+                <p>Parcelas, Cota</p>
               </div>
             </div>
             <div className="flex items-center mb-4">

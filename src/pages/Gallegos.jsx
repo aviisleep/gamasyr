@@ -60,7 +60,6 @@ const Gallegos = () => {
       Descargue: "Equipado con válvulas especializadas para el descargue eficiente de asfalto.",
       Aislamiento: "Aislamiento térmico opción de aislamiento térmico para mantener la temperatura del producto caliente.",
       Diseño: "Estructura optimizada para el transporte seguro y eficaz",
-      Descripción: "Para un Semirremolque tanque grado alimenticio de Gallegos Trailers, diferentes capacidades, bajo peso y gran capacidad, ventajas vakvulas sanitarias, sistema de cara y autodescarga y sistemas de limpieza e 360 spray ball",
     },
     {
       id: 4,
@@ -73,25 +72,31 @@ const Gallegos = () => {
       Peso: "Construcción en acero inox diseño ligero para maximizar la carga útil.",
       Válvulas: "Equipado con válvulas sanitarias de alta calidad para manejo seguro de productos alimenticios.",
       Sistemas: "Sistema de carga y autodescarga eficiente.",
-      Sistema_limpieza: "Sistema de limpieza interna 360° con spray ball para higienización completa y rápida.",
+      Sistema_limpieza: "Sistema de limpieza interna 360° spray ball para higienización completa y rápida.",
       Aplicación: "Transporte seguro de líquidos alimenticios bajo estrictos estándares de inocuidad."
     },
     {
       id: 5,
       Titulo: "Tanques Especiales",
+      Titulo2: "Tanque Especial — Gallegos Trailers",
       categories: ["carga liquida"],
       images: productImages.tanqueespeciales || [],
-      Description:
-        "Elaborado en acero al carbón, cumple con SCT 312 y DOT 412. Ideal para transporar ácidos y químicos en general.",
+      Descripción:
+        "Elaborado en acero al carbón,  acero inoxidable o aluminio. Cumple con SCT 312 y DOT 412. Ideal para transporar ácidos y químicos en general.",
       Capacidad: "21,000 Lts – 28,000 Lts",
       Ejes: "2 y 3 ejes",
     },
     {
       id: 6,
       Titulo: "Tanques Refinados",
+      Titulo2: "Tanque Refinado — Gallegos Trailers",
       categories: ["carga liquida"],
       images: productImages.tanquerefinados || [],
-      Description: "Fabricados en aluminio y cilíndricos.",
+      Descripción: `Fabricados en acero inoxidable o aluminio cilíndricos.
+
+      Tanque para transporte de productos refinados de Gallegos Trailers, construido en acero inoxidable 316L o aluminio grado 5454-H32, según especificaciones del cliente. Diseño cilíndrico horizontal con cabezales elípticos, capacidad desde 20,000 hasta 45,000 litros, compartimentado según normativas DOT/ADR.
+
+Equipado con sistema bottom loading que incluye válvulas API de 4”, tuberías internas de carga, sistema de recuperación de vapores y válvula de emergencia neumática. Incorpora rompeolas internos, sensores de sobrellenado, líneas de tierra y conexiones compatibles con terminales automatizadas. Cumple normativas de seguridad para transporte de combustibles, como UL-58 y NFPA 385.`,
       Capacidad: "47,500 y 55,000 lts.",
     },
     {
@@ -140,111 +145,136 @@ siendo ideal para aplicaciones de transporte industrial y maquinaria pesada.`,
      },
     {
       id: 11,
-      titulo: "Plataformas",
+      Titulo: "Plataformas",
+      Titulo2: "Plataformas - Gallegos Trailers",
       categories: ["carga seca"],
       images: productImages.plataformas || [],
-      description:
+      Descripción:
         "Piso disponible en madera pino o apitong, plasti tabla o antiderrapante cal. 14. Concha recta de 1.20 mts. de altura.",
-      capacidad: "Disponible en 40, 45 y 53 ft. de largo.",
-      ejes: "2 ejes.",
-      suspension: "Neumática.",
+      Disponible: "43, 48 y 53 ft o la medida que su operación requiera.",
+      Suspensión: "Suspensión neumática o mecanica en 2 y 3 ejes.",
     },
     {
       id: 12,
-      titulo: "Sider",
+      Titulo: "Sider",
+      Titulo2: "Semirremolque Sider - Gallegos Trailers",
       categories: ["carga seca", "transporte de bebida"],
       images: productImages.siders || [],
-      description:
-        "Caballete intermedio: triplay y alfombrada, piso antiderrapante cal. 14. Concha recta de 1.20 mts. de altura.",
-      length: "37.5 a 40 ft.",
+      Descripción:
+        `El Semirremolque Sider de Gallegos Trailers está diseñado para ofrecer alta capacidad de carga y resistencia, con una plataforma fabricada en acero o en configuración híbrida, asegurando bajo peso sin sacrificar la robustez.
+
+Equipado con cortinas de vinilo de alta resistencia, este semirremolque permite un fácil acceso y protección de la carga, adaptándose a diversos tipos de productos.
+
+Su estructura optimizada facilita la maniobrabilidad y eficiencia en el transporte, siendo ideal para la logística de cargas generales, tanto en trayectos cortos como largos.
+
+Lleva cortinas reforzadas en marca kinedyne y sistema de anclaje de carga con cintas de 2” y 4” de alta resistencia, garantizando la seguridad y estabilidad de la carga durante el transporte.`,
     },
     {
       id: 13,
-      titulo: "Sider Tarp",
+      Titulo: "Sider Tarp",
+      Titulo2: "Semirremolque Tarp All - Gallegos Trailers",
       categories: ["carga seca", "transporte de bebida"],
       images: productImages.siderstarp || [],
-      description:
-        "Ideal para el transporte de rollos, tarimas y carga en general.",
-      length: "38 a 53 ft.",
+      Descripción:
+        `El Semirremolque Tarp All de Gallegos Trailers está diseñado para ofrecer una solución flexible y eficiente en el transporte de cargas generales. Equipado con un sistema de lona tipo "tarp" de alta resistencia, este semirremolque proporciona una cobertura total, protegiendo la carga de condiciones climáticas adversas y garantizando mayor seguridad. 
+
+Su estructura robusta y su plataforma optimizada permiten una carga y descarga más rápida y eficiente.
+
+ Ideal para el transporte de productos diversos que requieren protección adicional sin sacrificar la facilidad de acceso, descarga lateral o posterior en muelle`,
     },
     {
       id: 14,
-      titulo: "Silos",
+      Titulo: "Silos",
+      Titulo2: "Silos - Gallegos Trailers",
       categories: ["transportes especiales"],
       images: productImages.silos || [],
-      description:
+      Descripción:
         "Silos de alta capacidad y resistencia, diseñados para el almacenamiento seguro y eficiente de productos a granel, garantizando protección y fiabilidad en todo momento.",
-      capacidad: "Desde 30 hasta 53 pies.",
+      Capacidad: "Desde 30 hasta 53 pies.",
     },
     {
       id: 15,
-      titulo: "Tolva de Acero",
+      Titulo: "Tolva de Acero",
+      Titulo2: "Tolva en Acero Tipo Cementera - Gallegos Trailers",
       categories: ["carga a granel"],
       images: productImages.tolvasdeacero || [],
       description:
-        "Fabricados en acero inoxidable o aluminio. Sistema de autocarga.",
-      capacidad: " 50 y 60m3.",
-      incluye: "filtro spin flow 4x4.",
+        `La Tolva en Acero Tipo Cementera de Gallegos Trailers está diseñada para el transporte eficiente de materiales a granel, como cemento, cal y otros productos similares. 
+
+Fabricada con acero de alta resistencia, esta tolva garantiza una larga vida útil y alta capacidad de carga. 
+
+Su diseño optimizado facilita la descarga rápida y controlada del material, asegurando un manejo eficiente durante el transporte y descarga. Ideal para la industria cementera y de la construcción, esta tolva es perfecta para operaciones que requieren resistencia y eficiencia en el manejo de materiales a granel.`,
     },
     {
       id: 16,
-      titulo: "Tolva de Aluminio",
+      Titulo: "Tolva de Aluminio",
+      Titulo2: "Tolva en Aluminio - Gallegos Trailers",
       categories: ["carga a granel"],
       images: productImages.tolvasdealuminio || [],
-      description:
-        "Fabricados en acero inoxidable o aluminio. Sistema de autocarga.",
-      capacidad: " 50 y 60m3.",
-      incluye: "filtro spin flow 4x4.",
+      Descripción:
+        "La Tolva en Aluminio de Gallegos Trailers está diseñada para ofrecer una solución de transporte eficiente y liviana, especialmente para materiales a granel como granos, fertilizantes y productos similares. Fabricada con aluminio de alta calidad, esta tolva proporciona una gran capacidad de carga sin sacrificar el peso, lo que optimiza el consumo de combustible y la maniobrabilidad del remolque.",
+      Ventajas_Técnicas: "-------------------------------------------------",
+      Ligereza:"El uso de aluminio reduce el peso total, permitiendo mayores cargas útiles y mejor eficiencia en el transporte.",
+      Durabilidad: "Resistente a la corrosión, lo que aumenta su vida útil, especialmente en condiciones climáticas adversas.",
+      Capacidad_de_Carga:"Amplia capacidad de carga para transporte de materiales a granel, con diseño optimizado para maximizar el volumen sin comprometer la estabilidad.",
     },
     {
       id: 17,
-      titulo: "Volco sobre Chasis",
+      Titulo: "Volco sobre Chasis",
+      Titulo2: "Volco sobre Chasis - Gallegos Trailers",
       categories: ["mineria", "equipos sobre chasis", "carga a granel"],
       images: productImages.volcochasis || [],
-      description:
+      Descripción:
         "Transporte de agregados, materiales abrasivos y de alto impacto.",
-      capacidad: "12M3 a 29M3",
-      incluye: "puertas de gravedad y puertas neumáticas.",
+      Capacidad: "12M3 a 29M3",
+      Incluye: "puertas de gravedad y puertas neumáticas.",
     },
     {
       id: 18,
-      titulo: "Volco Hibrido",
+      Titulo: "Volco HYBRID YACH",
+      Titulo2: "Volco Híbrido Yach - Gallegos Trailers",
       categories: ["mineria"],
       images: productImages.volcohibrido || [],
-      description:
-        "Transporte de agregados, materiales abrasivos y de alto impacto.",
-      capacidad: "12M3 a 29M3",
-      incluye: "puertas de gravedad y puertas neumáticas.",
+      Descripción:
+        `El Volco Hybrid Yacht de Gallegos Trailers está diseñado para el transporte eficiente de materiales pesados y exigentes en la industria minera. Su construcción ligera, con paredes en aluminio de alta resistencia, permite una mayor capacidad de carga útil, optimizando el rendimiento del remolque sin comprometer su robustez.`,
+      Capacidad: "12M3 a 29M3",
+      Incluye: "puertas de gravedad y puertas neumáticas.",
     },
     {
       id: 19,
-      titulo: "Volco Piraña",
+      Titulo: "Volco Piraña",
+      Titulo2: "Volco Piraña - Gallegos Trailers",
       categories: ["mineria"],
       images: productImages.volcopiraña || [],
-      description:
-        "Transporte de agregados, materiales abrasivos y de alto impacto.",
-      capacidad: "12M3 a 29M3",
-      incluye: "puertas de gravedad y puertas neumáticas.",
+      descripción:
+        `El Volco Piraña de Gallegos Trailers está diseñado para ofrecer una solución de transporte eficiente y resistente, ideal para el manejo de cargas pesadas en condiciones extremas. Con diferentes capacidades de carga, este semirremolque está construido con un diseño robusto que asegura durabilidad y resistencia en operaciones de alto rendimiento, siendo perfecto para sectores como la minería, construcción y transporte de materiales pesados.`	,
+      Características_Principales: "-------------------------------------------------",
+      Diferentes_Capacidades: "Disponible en una variedad de capacidades de carga para adaptarse a diferentes necesidades operativas.",
+      Diseño_Robusto: "Su construcción sólida y reforzada con materiales de alta calidad garantiza una larga vida útil, incluso en condiciones de trabajo intensas.",
+      Versatilidad: "Ideal para el transporte de materiales a granel y cargas pesadas, manteniendo un rendimiento óptimo bajo diversos tipos de carga.",
+      Alta_Resistencia: "Estructura diseñada para resistir impactos, desgaste y condiciones",
     },
     {
       id: 20,
-      titulo: "Chasis Porta Contenedor",
+      Titulo: "Chasis Porta Contenedor",
+      Titulo2: "Chasis Porta Contenedor - Gallegos Trailers",
       categories: ["transportes especiales"],
       images: productImages.portaContenedor || [],
-      description:
+      Descripción:
         "Transporte de agregados, materiales abrasivos y de alto impacto.",
-      capacidad: "12M3 a 29M3",
-      incluye: "puertas de gravedad y puertas neumáticas.",
+      Capacidad: "12M3 a 29M3",
+      Incluye: "puertas de gravedad y puertas neumáticas.",
     },
     {
       id: 21,
-      titulo: "Tolvas Cementeras",
+      Titulo: "Tolvas Cementeras",
+      Titulo2: "Tolvas Cementeras - Gallegos Trailers",
       categories: ["carga a granel", "equipos sobre chasis", ],
       images: productImages.tolvaCementera || [],
-      description:
+      Descripción:
         "Transporte de agregados, materiales abrasivos y de alto impacto.",
-      capacidad: "12M3 a 29M3",
-      incluye: "puertas de gravedad y puertas neumáticas.",
+      Capacidad: "12M3 a 29M3",
+      Incluye: "puertas de gravedad y puertas neumáticas.",
     },
   ];
 

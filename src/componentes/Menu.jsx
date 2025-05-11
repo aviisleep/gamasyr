@@ -162,7 +162,7 @@ const Menu = () => {
                 />
                 <span className="whitespace-nowrap">Gallegos</span>
               </Link>
-              <Link
+              {/* <Link
                 to="/trielht"
                 className="flex items-center px-4 py-3 text-white transition-colors duration-300 hover:bg-gray-700"
               >
@@ -172,7 +172,7 @@ const Menu = () => {
                   className="w-12 mr-3"
                 />
                 <span className="whitespace-nowrap">Trielht</span>
-              </Link>
+              </Link> */}
             </motion.div>
           </motion.div>
           <motion.div
