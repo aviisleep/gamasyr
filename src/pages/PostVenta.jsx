@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   FaTruck,
   FaTools,
@@ -9,10 +9,15 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Menu from "../componentes/Menu"; // Asegúrate de que esta ruta sea correcta
 import Empreqconfia from "../componentes/Empreqconfia"; // Componente ya existente
+import img1 from "../assets/imagenes/img1.jpeg";
+import img2 from "../assets/imagenes/img2.jpeg";
+import img3 from "../assets/imagenes/img3.jpeg";
 
 const PostVenta = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImages, setModalImages] = useState([]);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
 
   const openModal = (images) => {
     setModalImages(images);
@@ -41,16 +46,22 @@ const PostVenta = () => {
 
       {/* Hero Section - Imagen de fondo + Título centrado */}
       <motion.section
-        className="relative w-full h-[600px] bg-cover bg-center flex items-center justify-center"
-        style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1581094766190-dfa3c8be6e0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1674&q=80")`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
+        className="relative w-full h-[600px] flex items-center justify-center overflow-hidden bg-gray-800"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
+        {/* Video de fondo */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/fondogama.mp4" type="video/mp4" />
+        </video>
+        
         {/* Overlay oscuro para mejorar legibilidad */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         {/* Contenido centrado */}
@@ -90,7 +101,7 @@ const PostVenta = () => {
               }}
             >
               <img
-                src="https://images.unsplash.com/photo-1584132960-28460182b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                src={img1}
                 alt="Trailers"
                 className="w-full h-48 object-cover"
               />
@@ -114,7 +125,7 @@ const PostVenta = () => {
               }}
             >
               <img
-                src="https://images.unsplash.com/photo-1616084021429-4381b8b9dfec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                src={img2}
                 alt="Contenedores"
                 className="w-full h-48 object-cover"
               />
@@ -138,7 +149,7 @@ const PostVenta = () => {
               }}
             >
               <img
-                src="https://images.unsplash.com/photo-1586025502655-a2a2a72f355f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                src={img3}
                 alt="Postventa"
                 className="w-full h-48 object-cover"
               />
@@ -155,49 +166,12 @@ const PostVenta = () => {
 
       {/* Sección Quiénes Somos - Inspirado en h3sas.com */}
       <section className="relative w-full py-20 bg-white overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-         
+        <div className="max-w-6xl mx-auto px-6 text-center">     
 
-          <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            variants={fadeInVariant}
-            className="flex flex-wrap justify-center gap-8"
-          >
-            <div className="w-40 text-center">
-              <FaTruck className="mx-auto text-4xl text-yellow-500" />
-              <h3 className="font-semibold">Venta de Trailers</h3>
-              <p className="text-sm">
-                Ofrecemos trailers de alta calidad adaptados a tus necesidades.
-              </p>
-            </div>
-            <div className="w-40 text-center">
-              <FaTools className="mx-auto text-4xl text-yellow-500" />
-              <h3 className="font-semibold">Servicio de Mantenimiento</h3>
-              <p className="text-sm">
-                Contamos con un equipo de expertos en mantenimiento y reparación.
-              </p>
-            </div>
-            <div className="w-40 text-center">
-              <FaWarehouse className="mx-auto text-4xl text-yellow-500" />
-              <h3 className="font-semibold">Venta de Contenedores</h3>
-              <p className="text-sm">
-                Contenedores duraderos para almacenamiento y transporte seguro.
-              </p>
-            </div>
-          </motion.div>
+    
         </div>
       </section>
-      {/* Example button to trigger openModal */}
-      <button
-        onClick={handleOpenModal}
-        className="bg-blue-500 text-white px-4 py-2 rounded"
-      >
-        Open Modal
-      </button>
-
-      {/* Modal de Imágenes (ejemplo, ajustar según tu componente) */}
+    
 
       {/* Empresas que confían en nosotros */}
       <Empreqconfia />

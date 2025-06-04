@@ -13,18 +13,18 @@ const EmpreqConfia = () => {
       <h2 className="mb-4 text-2xl font-bold text-center text-white">
         Empresas que confían en nosotros
       </h2>
-      <div className="flex">
+      <div className="relative w-full overflow-hidden">
         {/* Contenedor del carrusel animado */}
         <div className="flex animate-slide whitespace-nowrap">
           {companies.concat(companies).map((company, index) => (
             <div
               key={index}
-              className="flex-shrink-0 mx-4 transition-transform duration-300 transform hover:scale-110"
+              className="flex-shrink-0 mx-8 transition-transform duration-300 transform hover:scale-110"
             >
               <img
                 src={company.logo}
                 alt={company.name}
-                className="h-16 transition-all duration-300 grayscale hover:grayscale-0"
+                className="h-20 transition-all duration-300 grayscale hover:grayscale-0"
               />
             </div>
           ))}

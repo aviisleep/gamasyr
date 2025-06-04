@@ -7,24 +7,21 @@ const Footer = () => {
       titulo: "Navega",
       links: [
         { name: "Home", url: "/" },
-        { name: "Empresa", url: "/empresa" },
-        { name: "Quienes somos", url: "/quienessomos" },
+        { name: "Quienes somos", url: "/postventa" },
       ],
     },
     {
       titulo: "Servicios",
       links: [
-        { name: "Productos", url: "/productos" },
-        { name: "Refacciones", url: "/servicios/#Refacciones" },
-        { name: "Reparaciones", url: "/servicios/#Reparaciones" },
+        { name: "Equipos", url: "/gallegos" }
       ],
     },
     {
       titulo: "Información",
       links: [
-        { name: "Contacto", url: "#contacto" },
+        { name: "Contacto", url: "/contacto" },
         { name: "Aviso de Privacidad", url: "/privacidad" },
-        { name: "Política de Cookies", url: "/cookies" },
+        { name: "Terminos y Condiciones", url: "/terminos" },
       ],
     },
   ];
@@ -55,16 +52,15 @@ const Footer = () => {
           <div className="flex items-center justify-center gap-4 mb-4 md:justify-start">
             <img src={logoDorado} alt="Logo Gama" className="w-40" />
           </div>
-          <p className="mt-2 text-gray-400">
-            {" "}
-            <p>Administrativa</p>
+          <div className="mt-2 text-gray-400">
+            <p className="font-semibold">Administrativa</p>
             <p>Autopista Medellin K.M. 3 T.T.C. Oficina C60, Cota</p>
-            <p>Servicio</p>
+            <p className="font-semibold mt-2">Servicio</p>
             <p>
               Autopista Medellin K.M. 2.2 500 metros por la entrada de parcelas
               cota, Cota
             </p>
-          </p>
+          </div>
         </div>
 
         {/* Enlaces de Navegación */}

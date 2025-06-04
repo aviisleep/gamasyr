@@ -3,23 +3,25 @@
 // tailwind.config.js
 export default {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
     // Asegúrate de incluir todas las rutas relevantes de tus archivos.
   ],
   theme: {
     extend: {
       keyframes: {
         slide: {
-          from: {
-            transform: "translateX(50)",
-          },
-          to: {
-            transform: "translateX(-50%)",
-          },
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' }
         },
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
+        }
       },
       animation: {
-        slide: "slide 10s linear infinite",
+        slide: 'slide 20s linear infinite',
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
       },
     },
   },
