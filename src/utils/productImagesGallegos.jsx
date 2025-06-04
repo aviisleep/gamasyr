@@ -362,23 +362,23 @@ export const productImages = {
    // tolva cementera
    tolvaCementera: [
     new URL(
-      "../assets/productos/gallegos/tolvacementera/tolvacementera1.jpg",
+      "../assets/productos/gallegos/tolvacementera/tolvaCementera1.jpg",
       import.meta.url
     ).href,
     new URL(
-      "../assets/productos/gallegos/tolvacementera/tolvacementera2.jpg",
+      "../assets/productos/gallegos/tolvacementera/tolvaCementera2.jpg",
       import.meta.url
     ).href,
     new URL(
-      "../assets/productos/gallegos/tolvacementera/tolvacementera3.jpg",
+      "../assets/productos/gallegos/tolvacementera/tolvaCementera3.jpg",
       import.meta.url
     ).href,
     new URL(
-      "../assets/productos/gallegos/tolvacementera/tolvacementera4.jpg",
+      "../assets/productos/gallegos/tolvacementera/tolvaCementera4.jpg",
       import.meta.url
     ).href,
     new URL(
-      "../assets/productos/gallegos/tolvacementera/tolvacementera5.jpg",
+      "../assets/productos/gallegos/tolvacementera/tolvaCementera5.jpg",
       import.meta.url
     ).href,
   ],
@@ -448,29 +448,6 @@ export const productImages = {
     ).href,
     new URL(
       "../assets/productos/gallegos/volcopiraña/volcopiraña7.jpg",
-      import.meta.url
-    ).href,
-  ],
-   // chasis porta contenedor
-  chasisPortaContenedor: [
-    new URL(
-      "../assets/productos/gallegos/chasisportacontenedor/chasisportacontenedor1.jpg",
-      import.meta.url
-    ).href,
-    new URL(
-      "../assets/productos/gallegos/chasisportacontenedor/chasisportacontenedor2.jpg",
-      import.meta.url
-    ).href,
-    new URL(
-      "../assets/productos/gallegos/chasisportacontenedor/chasisportacontenedor3.jpg",
-      import.meta.url
-    ).href,
-    new URL(
-      "../assets/productos/gallegos/chasisportacontenedor/chasisportacontenedor4.jpg",
-      import.meta.url
-    ).href,
-    new URL(
-      "../assets/productos/gallegos/chasisportacontenedor/chasisportacontenedor5.jpg",
       import.meta.url
     ).href,
   ],
