@@ -9,9 +9,9 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Menu from "../componentes/Menu"; // Asegúrate de que esta ruta sea correcta
 import Empreqconfia from "../componentes/Empreqconfia"; // Componente ya existente
-import img1 from "../assets/imagenes/tecnicoGama1.png";
-import img2 from "../assets/imagenes/camionesGama2.png";
-import img3 from "../assets/imagenes/tecnicoGama2.png";
+import img1 from "../assets/imagenes/tecnicoGama1.webp";
+import img2 from "../assets/imagenes/camionesGama2.webp";
+import img3 from "../assets/imagenes/maxilodatruck.webp";
 import { useT } from '../hooks/useT';
 
 const PostVenta = () => {

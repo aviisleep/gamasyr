@@ -1,4 +1,4 @@
-import logogallegos from "../assets/imagenes/Logo-Gallegos-1536x552.png";
+import logogallegos from "../assets/imagenes/Logo-Gallegos-1536x552.webp";
 // import logotrielht from "../assets/imagenes/logo trielht.png"; // Comentado - oculto
 import { useT } from '../hooks/useT';
 
