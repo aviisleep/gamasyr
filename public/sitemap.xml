@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Página de inicio -->
+  <url>
+    <loc>https://gamasyr.com/</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://gamasyr.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gamasyr.com/en/"/>
+  </url>
+
+  <!-- Página de contacto -->
+  <url>
+    <loc>https://gamasyr.com/contacto</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://gamasyr.com/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gamasyr.com/en/contact"/>
+  </url>
+
+  <!-- Página Gallegos -->
+  <url>
+    <loc>https://gamasyr.com/gallegos</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://gamasyr.com/gallegos"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gamasyr.com/en/gallegos"/>
+  </url>
+
+  <!-- Página Trielht -->
+  <url>
+    <loc>https://gamasyr.com/trielht</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://gamasyr.com/trielht"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gamasyr.com/en/trielht"/>
+  </url>
+
+  <!-- Página Post Venta -->
+  <url>
+    <loc>https://gamasyr.com/postVenta</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://gamasyr.com/postVenta"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gamasyr.com/en/post-sale"/>
+  </url>
+
+  <!-- Página Términos y Condiciones -->
+  <url>
+    <loc>https://gamasyr.com/terminos</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://gamasyr.com/terminos"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gamasyr.com/en/terms"/>
+  </url>
+
+  <!-- Página Política de Privacidad -->
+  <url>
+    <loc>https://gamasyr.com/privacidad</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://gamasyr.com/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gamasyr.com/en/privacy"/>
+  </url>
+
+</urlset> 

@@ -396,7 +396,7 @@ export const productImages = {
   // volco hibrido
   volcohibrido: [
     new URL(
-      "../assets/productos/gallegos/volcohibrido/volcohibrido6.jpg",
+      "../assets/productos/gallegos/volcohibrido/volcohibrido1.jpg",
       import.meta.url
     ).href,
     new URL(
@@ -416,7 +416,7 @@ export const productImages = {
       import.meta.url
     ).href,
     new URL(
-      "../assets/productos/gallegos/volcohibrido/volcohibrido1.jpg",
+      "../assets/productos/gallegos/volcohibrido/volcohibrido6.jpg",
       import.meta.url
     ).href,
   ],

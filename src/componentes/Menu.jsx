@@ -1,16 +1,20 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import { IoIosArrowDown } from "react-icons/io";
 import Logop from "../assets/logos/logo dorado lateral.png";
 import Logogallegos from "../assets/imagenes/Logo-Gallegos-1536x552.png";
 import Logotrielht from "../assets/imagenes/logo trielht.png";
+import ThemeToggle from './ThemeToggle';
+import LanguageToggle from './LanguageToggle';
+import { useT } from '../hooks/useT';
 
 const Menu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isCatalogoOpen, setCatalogoOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isFooterVisible, setIsFooterVisible] = useState(false);
+  const location = useLocation();
+  const t = useT();
 
   // Detectar scroll
   useEffect(() => {
@@ -19,13 +23,6 @@ const Menu = () => {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
-      }
-
-      // Detectar si el footer es visible
-      const footer = document.querySelector("footer");
-      if (footer) {
-        const footerRect = footer.getBoundingClientRect();
-        setIsFooterVisible(footerRect.top <= window.innerHeight);
       }
     };
 
@@ -46,260 +43,229 @@ const Menu = () => {
     setCatalogoOpen(false);
   };
 
+  // Ocultar logo en Post Venta
+  const shouldShowLogo = location.pathname !== '/postVenta';
+
   return (
     <motion.header
-      className={`fixed top-0 z-50 flex items-center justify-between w-full px-8 font-bold text-white transition-all duration-500 overflow-visible`}
+      className="fixed top-0 z-50 w-full bg-gray-800 dark:bg-gray-900 bg-opacity-90 dark:bg-opacity-90 backdrop-blur-md transition-colors duration-300"
       style={{
-        height: isScrolled ? "80px" : "96px",
-        background: "rgba(30, 41, 59, 0.9)", // Color gris azulado con transparencia
-        backdropFilter: "blur(10px)", // Efecto de desenfoque para el fondo
-        WebkitBackdropFilter: "blur(10px)", // Compatibilidad con Safari
-        borderRadius: isScrolled ? "50px" : "0", // Efecto ovalado
+        height: isScrolled ? "70px" : "90px",
       }}
-      initial={{ scale: 1 }}
-      animate={{
-        scale: isScrolled ? 0.98 : 1, // Contraer ligeramente el fondo
-      }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.3 }}
     >
-      {/* Contenedor principal centrado */}
-      <motion.div
-        className="flex items-center justify-center w-full"
-        initial={{ x: 0 }}
-        animate={{
-          x: isScrolled ? 0 : 0,
-        }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-      >
-        {/* Logo */}
-        <motion.div
-          className="flex items-center"
-          initial={{ x: 0 }}
-          animate={{
-            x: isScrolled ? 0 : "-50%",
-            scale: isScrolled ? 0.8 : 1,
-            opacity: isFooterVisible ? 0 : 1,
-          }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-        >
-          {!isFooterVisible && (
-            <Link to="/">
-              <img
-                src={Logop}
-                alt="Logo Gama SYR"
-                className={`transition-all duration-500 ${
-                  isScrolled ? "w-32 md:w-36" : "w-40 md:w-48"
-                }`}
-                style={{
-                  filter: "none", // Eliminar cualquier filtro indeseado
-                }}
-              />
-            </Link>
-          )}
-        </motion.div>
-
-        {/* Botones del menú en el lado derecho (versión escritorio) */}
-        <motion.nav
-          className={`hidden md:flex space-x-6 text-sm items-center transition-all duration-500`}
-          initial={{ x: 0 }}
-          animate={{
-            x: isScrolled ? 0 : "50%",
-          }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-        >
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Link
-              to="/"
-              className="px-4 py-2 transition-colors duration-300 rounded hover:bg-gray-700"
-              style={{
-                textShadow: "none", // Eliminar sombra del texto
-              }}
-            >
-              Inicio
-            </Link>
-          </motion.div>
-          <motion.div
-          className="relative"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ duration: 0.3 }}
-          >
-            <button
-              onClick={toggleCatalogo}
-              className="flex items-center px-4 py-2 transition-colors duration-300 rounded hover:bg-gray-700"
-              style={{
-                textShadow: "none", // Eliminar sombra del texto
-              }}
-            >
-              Equipos
-              <IoIosArrowDown
-                className={`ml-1 transform transition-transform ${
-                  isCatalogoOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
+      <div className="container mx-auto px-4 h-full">
+        <div className="flex items-center justify-between h-full">
+          {/* Logo - oculto en Post Venta */}
+          {shouldShowLogo && (
             <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{
-                height: isCatalogoOpen ? "auto" : 0,
-                opacity: isCatalogoOpen ? 1 : 0,
-              }}
-              transition={{ duration: 0.3 }}
-              className="absolute right-0 mt-2 min-w-max overflow-y-visible bg-gray-800 rounded-md shadow-xl"
+              className="flex-shrink-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
             >
-              <Link
-                to="/gallegos"
-                className="flex items-center px-4 py-3 text-white transition-colors duration-300 hover:bg-gray-700"
-              >
+              <Link to="/">
                 <img
-                  src={Logogallegos}
-                  alt="Gallegos Logo"
-                  className="w-12 mr-3"
+                  src={Logop}
+                  alt="Logo Gama SYR"
+                  className={`transition-all duration-300 object-contain mt-4 ${
+                    isScrolled ? "h-12" : "h-16"
+                  }`}
                 />
-                <span className="whitespace-nowrap">Gallegos</span>
               </Link>
-              {/* <Link
-                to="/trielht"
-                className="flex items-center px-4 py-3 text-white transition-colors duration-300 hover:bg-gray-700"
-              >
-                <img
-                  src={Logotrielht}
-                  alt="Trielht Logo"
-                  className="w-12 mr-3"
-                />
-                <span className="whitespace-nowrap">Trielht</span>
-              </Link> */}
             </motion.div>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Link
-              to="/postVenta"
-              className="px-4 py-2 transition-colors duration-300 rounded hover:bg-gray-700"
-              style={{
-                textShadow: "none", // Eliminar sombra del texto
-              }}
-            >
-              PostVenta
-            </Link>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Link
-              to="/contacto"
-              className="px-4 py-2 transition-colors duration-300 rounded hover:bg-gray-700"
-              style={{
-                textShadow: "none", // Eliminar sombra del texto
-              }}
-            >
-              Contacto
-            </Link>
-          </motion.div>
-        </motion.nav>
-      </motion.div>
+          )}
 
-      {/* Botón del menú hamburguesa (versión móvil) */}
-      <button
-        className="p-4 text-3xl text-white hover:text-red-500 md:hidden"
-        onClick={toggleMenu}
-      >
-        ☰
-      </button>
-
-      {/* Menú desplegable para móviles */}
-      {isMenuOpen && (
-        <>
-          <div
-            className="fixed inset-0 z-40 bg-black bg-opacity-50"
-            onClick={closeMenu}
-          ></div>
-          <motion.div
-            initial={{ x: 0 }}
-            animate={{ x: isScrolled ? 0 : window.innerWidth < 768 ? 0 : "-50%",
-    scale: isScrolled ? 0.8 : 1,
-    opacity: isFooterVisible ? 0 : 1,}}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="fixed top-24 left-0 z-50 w-full max-h-[calc(100vh-6rem)] bg-gray-800 shadow-lg overflow-y-auto md:hidden"
-          >
+          {/* Menú de navegación - versión escritorio */}
+          <nav className="hidden md:flex items-center space-x-8">
             <Link
               to="/"
-              className="flex items-center px-6 py-4 text-lg text-white hover:bg-gray-700"
-              onClick={closeMenu}
+              className="text-white hover:text-red-400 transition-colors duration-300 font-medium"
             >
-              Home
+              {t('home')}
             </Link>
+            
+            {/* Dropdown Equipos */}
             <div className="relative">
               <button
                 onClick={toggleCatalogo}
-                className="flex items-center w-full px-6 py-4 text-lg text-white hover:bg-gray-700"
+                className="flex items-center text-white hover:text-red-400 transition-colors duration-300 font-medium"
               >
-                Catálogo
+                {t('equipos')}
                 <IoIosArrowDown
-                  className={`ml-2 text-xl transform transition-transform ${
+                  className={`ml-1 transform transition-transform ${
                     isCatalogoOpen ? "rotate-180" : ""
                   }`}
                 />
               </button>
-              <motion.div
-                initial={{ height: 0 }}
-                animate={{ height: isCatalogoOpen ? "auto" : 0 }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden text-white bg-gray-800 shadow-lg"
-              >
-                <Link
-                  to="/gallegos"
-                  className="flex items-center w-full px-5 py-4 text-lg text-white hover:bg-gray-700"
-                  onClick={closeMenu}
-                >
-                  <img
-                    src={Logogallegos}
-                    alt="Gallegos Logo"
-                    className="w-12 mr-4"
-                  />
-                  <span className="whitespace-nowrap">Gallegos</span>
-                </Link>
-                <Link
-                  to="/trielht"
-                  className="flex items-center w-full px-6 py-4 text-lg text-white hover:bg-gray-700"
-                  onClick={closeMenu}
-                >
-                  <img
-                    src={Logotrielht}
-                    alt="Trielht Logo"
-                    className="w-12 mr-4"
-                  />
-                  <span className="whitespace-nowrap">Trielht</span>
-                </Link>
-              </motion.div>
+              
+              <AnimatePresence>
+                {isCatalogoOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 min-w-[200px] z-50"
+                  >
+                    <Link
+                      to="/gallegos"
+                      className="flex items-center px-4 py-3 text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                      onClick={() => setCatalogoOpen(false)}
+                    >
+                      <img
+                        src={Logogallegos}
+                        alt="Gallegos Logo"
+                        className="w-8 h-8 mr-3 object-contain"
+                      />
+                      <span>Gallegos</span>
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
+            
             <Link
               to="/postVenta"
-              className="flex items-center px-6 py-4 text-lg text-white hover:bg-gray-700"
-              onClick={closeMenu}
+              className="text-white hover:text-red-400 transition-colors duration-300 font-medium"
             >
-              Post Venta
+              {t('postVenta')}
             </Link>
+            
             <Link
               to="/contacto"
-              className="flex items-center px-6 py-4 text-lg text-white hover:bg-gray-700"
-              onClick={closeMenu}
+              className="text-white hover:text-red-400 transition-colors duration-300 font-medium"
             >
-              Contacto
+              {t('contacto')}
             </Link>
-          </motion.div>
-        </>
-      )}
+          </nav>
+
+          {/* Toggles de idioma y tema - versión escritorio */}
+          <div className="hidden md:flex items-center space-x-2">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
+
+          {/* Botón del menú hamburguesa - versión móvil */}
+          <button
+            className="md:hidden text-white text-2xl hover:text-red-400 transition-colors duration-300"
+            onClick={toggleMenu}
+            aria-label="Abrir menú"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+
+      {/* Menú móvil */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <>
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+              onClick={closeMenu}
+            />
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.3 }}
+              className="fixed top-0 right-0 h-full w-80 bg-white dark:bg-gray-800 z-50 md:hidden shadow-xl"
+            >
+              <div className="p-6">
+                <div className="flex justify-between items-center mb-8">
+                  <h2 className="text-xl font-bold text-gray-800 dark:text-white">Menú</h2>
+                  <button
+                    onClick={closeMenu}
+                    className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                  >
+                    ✕
+                  </button>
+                </div>
+                
+                <nav className="space-y-4">
+                  <Link
+                    to="/"
+                    className="block py-3 text-gray-800 dark:text-white hover:text-red-400 transition-colors duration-300"
+                    onClick={closeMenu}
+                  >
+                    {t('home')}
+                  </Link>
+                  
+                  <div>
+                    <button
+                      onClick={toggleCatalogo}
+                      className="flex items-center justify-between w-full py-3 text-gray-800 dark:text-white hover:text-red-400 transition-colors duration-300"
+                    >
+                      {t('equipos')}
+                      <IoIosArrowDown
+                        className={`transform transition-transform ${
+                          isCatalogoOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    
+                    <AnimatePresence>
+                      {isCatalogoOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="ml-4 space-y-2 overflow-hidden"
+                        >
+                          <Link
+                            to="/gallegos"
+                            className="flex items-center py-2 text-gray-600 dark:text-gray-300 hover:text-red-400 transition-colors duration-300"
+                            onClick={closeMenu}
+                          >
+                            <img
+                              src={Logogallegos}
+                              alt="Gallegos Logo"
+                              className="w-6 h-6 mr-3 object-contain"
+                            />
+                            Gallegos
+                          </Link>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                  
+                  <Link
+                    to="/postVenta"
+                    className="block py-3 text-gray-800 dark:text-white hover:text-red-400 transition-colors duration-300"
+                    onClick={closeMenu}
+                  >
+                    {t('postVenta')}
+                  </Link>
+                  
+                  <Link
+                    to="/contacto"
+                    className="block py-3 text-gray-800 dark:text-white hover:text-red-400 transition-colors duration-300"
+                    onClick={closeMenu}
+                  >
+                    {t('contacto')}
+                  </Link>
+                </nav>
+                
+                {/* Toggles en móvil */}
+                <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-600 dark:text-gray-400">Idioma:</span>
+                    <LanguageToggle />
+                  </div>
+                  <div className="flex items-center justify-between mt-4">
+                    <span className="text-gray-600 dark:text-gray-400">Tema:</span>
+                    <ThemeToggle />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 };

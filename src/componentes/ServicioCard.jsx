@@ -3,12 +3,12 @@ import PropTypes from "prop-types"; // Importa PropTypes para la validación de 
 // Componente reutilizable para las tarjetas de servicio con validación de propiedades
 const ServicioCard = ({ icon, titulo, description, onClick }) => (
   <div
-    className="max-w-xs p-6 text-center transition-transform duration-300 transform bg-white shadow-md cursor-pointer rounded-xl hover:scale-105"
+    className="max-w-xs p-6 text-center transition-transform duration-300 transform bg-white dark:bg-gray-800 shadow-md cursor-pointer rounded-xl hover:scale-105 transition-colors duration-300"
     onClick={onClick}
   >
     {icon}
-    <h3 className="mt-4 text-xl font-semibold">{titulo}</h3>
-    <p className="text-sm text-gray-600">{description}</p>
+    <h3 className="mt-4 text-xl font-semibold text-gray-900 dark:text-white">{titulo}</h3>
+    <p className="text-sm text-gray-700 dark:text-gray-200">{description}</p>
   </div>
 );
 

@@ -1,0 +1,41 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://gamasyr.com/sitemap.xml
+
+# Crawl-delay para ser respetuoso con el servidor
+Crawl-delay: 1
+
+# Permitir acceso a recursos importantes
+Allow: /assets/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Bloquear acceso a archivos de desarrollo
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /package-lock.json
+
+# Bloquear acceso a archivos de configuración
+Disallow: /vite.config.js
+Disallow: /tailwind.config.js
+Disallow: /postcss.config.js
+
+# Permitir acceso específico para Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+# Permitir acceso específico para Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0.5
+
+# Configuración específica para Colombia
+User-agent: *
+Allow: /
+Host: https://gamasyr.com 

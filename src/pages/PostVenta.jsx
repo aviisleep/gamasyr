@@ -9,15 +9,17 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Menu from "../componentes/Menu"; // Asegúrate de que esta ruta sea correcta
 import Empreqconfia from "../componentes/Empreqconfia"; // Componente ya existente
-import img1 from "../assets/imagenes/img1.jpeg";
-import img2 from "../assets/imagenes/img2.jpeg";
-import img3 from "../assets/imagenes/img3.jpeg";
+import img1 from "../assets/imagenes/tecnicoGama1.png";
+import img2 from "../assets/imagenes/camionesGama2.png";
+import img3 from "../assets/imagenes/tecnicoGama2.png";
+import { useT } from '../hooks/useT';
 
 const PostVenta = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImages, setModalImages] = useState([]);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
+  const t = useT();
 
   const openModal = (images) => {
     setModalImages(images);
@@ -72,7 +74,7 @@ const PostVenta = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            En Camiones y Remolques Gama
+            {t('postVentaHeroTitulo')}
           </motion.h1>
           <motion.p
             className="text-lg md:text-xl max-w-3xl mx-auto"
@@ -80,7 +82,7 @@ const PostVenta = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            nos especializamos en la venta de equipos, repuestos y accesorios, además de ofrecer servicios de mantenimiento, garantizando siempre calidad, eficiencia y un compromiso total con las necesidades de nuestros clientes.
+            {t('postVentaHeroDescripcion')}
           </motion.p>
         </div>
       </motion.section>
@@ -106,9 +108,9 @@ const PostVenta = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Trailers</h3>
-                <p className="text-gray-600">
-                  Ofrecemos soluciones de transporte con trailers resistentes y versátiles para todo tipo de carga.
+                <h3 className="text-xl font-semibold mb-2">{t('postVentaCard1Titulo')}</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {t('postVentaCard1Descripcion')}
                 </p>
               </div>
             </motion.div>
@@ -130,9 +132,9 @@ const PostVenta = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Contenedores</h3>
-                <p className="text-gray-600">
-                  Diseñados para almacenamiento seguro, duraderos y adaptables a cualquier condición climática.
+                <h3 className="text-xl font-semibold mb-2">{t('postVentaCard2Titulo')}</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {t('postVentaCard2Descripcion')}
                 </p>
               </div>
             </motion.div>
@@ -154,9 +156,9 @@ const PostVenta = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Postventa</h3>
-                <p className="text-gray-600">
-                  Soporte técnico integral, mantenimiento preventivo y correctivo, y venta de repuestos certificados.
+                <h3 className="text-xl font-semibold mb-2">{t('postVentaCard3Titulo')}</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {t('postVentaCard3Descripcion')}
                 </p>
               </div>
             </motion.div>

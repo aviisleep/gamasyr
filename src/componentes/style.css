@@ -5,6 +5,13 @@ body {
   color: #eee;
   font-family: Poppins;
   font-size: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Modo oscuro para el body */
+.dark body {
+  background-color: #111827;
+  color: #f9fafb;
 }
 
 a {
@@ -57,7 +64,15 @@ header a {
   box-sizing: border-box;
   color: #000000;
   text-shadow: 0 5px 10px #0004;
+  transition: color 0.3s ease;
 }
+
+/* Modo oscuro para el contenido del carrusel */
+.dark .carousel .list .item .content {
+  color: #ffffff;
+  text-shadow: 0 5px 10px #0008;
+}
+
 .carousel .list .item .author {
   font-weight: bold;
   letter-spacing: 10px;
@@ -84,11 +99,26 @@ header a {
   letter-spacing: 3px;
   font-family: Poppins;
   font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Modo oscuro para los botones */
+.dark .carousel .list .item .buttons button {
+  background-color: #374151;
+  color: #ffffff;
+}
+
 .carousel .list .item .buttons button:nth-child(2) {
   background-color: #ffffff;
   color: #000000;
 }
+
+/* Modo oscuro para el segundo botón */
+.dark .carousel .list .item .buttons button:nth-child(2) {
+  background-color: #374151;
+  color: #ffffff;
+}
+
 /* thumbail */
 .thumbnail {
   position: absolute;
@@ -150,6 +180,17 @@ header a {
 .arrows button:hover {
   background-color: #fff;
   color: #000;
+}
+
+/* Modo oscuro para las flechas */
+.dark .arrows button {
+  background-color: #374151;
+  color: #ffffff;
+}
+
+.dark .arrows button:hover {
+  background-color: #4b5563;
+  color: #ffffff;
 }
 
 /* animation */

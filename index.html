@@ -1,17 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="./src//assets/logos/iconogama.svg"
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <titulo>Gama CYR</titulo>
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="description" content="Empresa líder en venta de camiones, remolques y servicios de transporte en Colombia. Ubicados en Cota, Cundinamarca." />
+    <meta name="keywords" content="camiones, remolques, transporte, colombia, cota, cundinamarca, gallegos, maxiloda" />
+    <meta name="author" content="Camiones y Remolques Gama" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="CYR Gama  - Camiones, Remolques y Servicios en Colombia" />
+    <meta property="og:description" content="Empresa líder en venta de camiones, remolques y servicios de transporte en Colombia." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.cyrgama.com" />
+    <meta property="og:image" content="/src/assets/imagenes/Logo-Gallegos-1536x552.png" />
+    <meta property="og:locale" content="es_CO" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CYR Gama - Camiones, Remolques y Servicios" />
+    <meta name="twitter:description" content="Empresa líder en venta de camiones, remolques y servicios de transporte en Colombia." />
+    <meta name="twitter:image" content="/src/assets/imagenes/Logo-Gallegos-1536x552.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./src/assets/logos/iconogama.svg" />
+    <link rel="apple-touch-icon" href="./src/assets/logos/iconogama.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/src/assets/logos/logo dorado lateral.png" as="image" />
+    <link rel="preload" href="/src/assets/logos/logodorado.png" as="image" />
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    
+    <!-- Security headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <title>CYR Gama - Camiones, Remolques y Servicios en Colombia</title>
   </head>
   <body>
     <div id="root"></div>
+    
+    <!-- Service Worker Registration -->
+    <!--
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+    -->
+    
+    <!-- Performance monitoring -->
+    <script>
+      // Core Web Vitals monitoring
+      if ('PerformanceObserver' in window) {
+        // LCP
+        new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          const lcp = entries[entries.length - 1];
+          if (lcp) {
+            console.log('LCP:', lcp.startTime);
+            // Send to analytics
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                metric_value: lcp.startTime,
+                metric_id: 'LCP'
+              });
+            }
+          }
+        }).observe({ entryTypes: ['largest-contentful-paint'] });
+
+        // FID
+        new PerformanceObserver((list) => {
+          list.getEntries().forEach((entry) => {
+            const fid = entry.processingStart - entry.startTime;
+            console.log('FID:', fid);
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                metric_value: fid,
+                metric_id: 'FID'
+              });
+            }
+          });
+        }).observe({ entryTypes: ['first-input'] });
+
+        // CLS
+        new PerformanceObserver((list) => {
+          let cls = 0;
+          list.getEntries().forEach((entry) => {
+            if (!entry.hadRecentInput) {
+              cls += entry.value;
+            }
+          });
+          console.log('CLS:', cls);
+          if (window.gtag) {
+            window.gtag('event', 'web_vitals', {
+              metric_value: cls,
+              metric_id: 'CLS'
+            });
+          }
+        }).observe({ entryTypes: ['layout-shift'] });
+      }
+    </script>
+    
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

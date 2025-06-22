@@ -1,17 +1,19 @@
 import logogallegos from "../assets/imagenes/Logo-Gallegos-1536x552.png";
-import logotrielht from "../assets/imagenes/logo trielht.png";
+// import logotrielht from "../assets/imagenes/logo trielht.png"; // Comentado - oculto
+import { useT } from '../hooks/useT';
 
 const EmpreqConfia = () => {
+  const t = useT();
   const companies = [
     { name: "Gallegos", logo: logogallegos },
-    { name: "Trielht", logo: logotrielht },
+    // { name: "Trielht", logo: logotrielht }, // Comentado - oculto
     // Agrega más empresas según sea necesario
   ];
 
   return (
     <section className="p-4 my-8 overflow-hidden bg-gray-800">
       <h2 className="mb-4 text-2xl font-bold text-center text-white">
-        Empresas que confían en nosotros
+        {t('empresasQueConfian')}
       </h2>
       <div className="relative w-full overflow-hidden">
         {/* Contenedor del carrusel animado */}

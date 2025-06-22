@@ -1,3 +1,519 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Estilos de accesibilidad */
+@layer utilities {
+  /* Alto contraste */
+  .high-contrast {
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+  }
+  
+  .high-contrast * {
+    background-color: white !important;
+    color: black !important;
+    border-color: black !important;
+  }
+  
+  .high-contrast .bg-gray-50,
+  .high-contrast .bg-gray-100,
+  .high-contrast .bg-white {
+    background-color: white !important;
+  }
+  
+  .high-contrast .text-gray-600,
+  .high-contrast .text-gray-700,
+  .high-contrast .text-gray-800 {
+    color: black !important;
+  }
+  
+  .high-contrast .border-gray-200,
+  .high-contrast .border-gray-300 {
+    border-color: black !important;
+  }
+  
+  .high-contrast .bg-blue-600 {
+    background-color: #000080 !important;
+    color: white !important;
+  }
+  
+  .high-contrast .bg-green-600 {
+    background-color: #006400 !important;
+    color: white !important;
+  }
+
+  /* Texto grande */
+  .large-text {
+    font-size: 1.2em;
+  }
+  
+  .large-text h1 {
+    font-size: 2.5em;
+  }
+  
+  .large-text h2 {
+    font-size: 2em;
+  }
+  
+  .large-text h3 {
+    font-size: 1.5em;
+  }
+  
+  .large-text p,
+  .large-text span,
+  .large-text div {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+
+  /* Reducir movimiento */
+  .reduced-motion *,
+  .reduced-motion *::before,
+  .reduced-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Estilos para imágenes optimizadas */
+@layer components {
+  .optimized-image-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .optimized-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .optimized-image.image-error {
+    opacity: 0;
+  }
+  
+  .image-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6;
+    color: #9ca3af;
+    font-size: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+  }
+  
+  .image-skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  
+  /* Lazy loading blur effect */
+  .lazy-load-image-background.blur {
+    filter: blur(15px);
+  }
+  
+  .lazy-load-image-background.blur.lazy-load-image-loaded {
+    filter: blur(0);
+  }
+  
+  /* Optimización para diferentes tamaños de pantalla */
+  .optimized-image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Aspect ratio containers */
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+  
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+  
+  .aspect-photo {
+    aspect-ratio: 4 / 3;
+  }
+  
+  /* Skeleton loading */
+  .skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+  
+  @keyframes loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  
+  /* Optimización para WebP */
+  picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Mejoras para cards de productos */
+  .product-card-image {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .product-card:hover .product-card-image {
+    transform: scale(1.05);
+  }
+  
+  /* Object position específicos para diferentes tipos de equipos */
+  .object-bottom {
+    object-position: center bottom;
+  }
+  
+  .object-center {
+    object-position: center center;
+  }
+  
+  .object-top {
+    object-position: center top;
+  }
+  
+  /* Mejorar contraste y legibilidad */
+  .optimized-image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+    pointer-events: none;
+  }
+  
+  /* Estilos específicos para volcos */
+  .product-card-image[alt*="Volco"] {
+    object-position: center bottom !important;
+  }
+  
+  /* Estilos específicos para tanques */
+  .product-card-image[alt*="Tanque"] {
+    object-position: center center !important;
+  }
+  
+  /* Estilos específicos para tolvas */
+  .product-card-image[alt*="Tolva"] {
+    object-position: center center !important;
+  }
+  
+  /* Estilos específicos para productos que necesitan mostrar la parte inferior */
+  .product-card-image[alt*="Grado Alimenticio"],
+  .product-card-image[alt*="Tanques Refinados"],
+  .product-card-image[alt*="Botelleros"],
+  .product-card-image[alt*="Cama Baja"],
+  .product-card-image[alt*="Dollys"],
+  .product-card-image[alt*="Furgon Composite"],
+  .product-card-image[alt*="Sider Tarp"],
+  .product-card-image[alt*="Volco HYBRID YACH"] {
+    object-position: center 60% !important;
+    object-fit: cover !important;
+  }
+  
+  /* Ajuste adicional para asegurar que se vea el equipo */
+  .product-card-image[alt*="Grado Alimenticio"] {
+    object-position: center 60% !important;
+  }
+  
+  .product-card-image[alt*="Tanques Refinados"] {
+    object-position: center 60% !important;
+  }
+  
+  .product-card-image[alt*="Botelleros"] {
+    object-position: center 60% !important;
+  }
+  
+  .product-card-image[alt*="Cama Baja"] {
+    object-position: center 60% !important;
+  }
+  
+  .product-card-image[alt*="Dollys"] {
+    object-position: center 60% !important;
+  }
+  
+  .product-card-image[alt*="Furgon Composite"] {
+    object-position: center 60% !important;
+  }
+  
+  .product-card-image[alt*="Sider Tarp"] {
+    object-position: center 60% !important;
+  }
+  
+  .product-card-image[alt*="Volco HYBRID YACH"] {
+    object-position: center 60% !important;
+  }
+}
+
+/* Mejoras de accesibilidad general */
+@layer base {
+  /* Enfoque visible para navegación por teclado */
+  *:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+  
+  /* Saltar al contenido principal */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #3b82f6;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+  }
+  
+  .skip-link:focus {
+    top: 6px;
+  }
+  
+  /* Mejorar contraste de enlaces */
+  a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+  
+  /* Mejorar legibilidad de texto */
+  body {
+    line-height: 1.6;
+  }
+  
+  /* Asegurar contraste mínimo en botones */
+  button,
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Mejorar formularios */
+  input,
+  textarea,
+  select {
+    min-height: 44px;
+  }
+  
+  label {
+    font-weight: 600;
+  }
+  
+  /* Mensajes de error accesibles */
+  .error-message {
+    color: #dc2626;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  
+  .error-message::before {
+    content: "⚠ ";
+  }
+  
+  /* Indicadores de estado */
+  .required::after {
+    content: " *";
+    color: #dc2626;
+  }
+  
+  /* Mejorar navegación */
+  nav a {
+    position: relative;
+  }
+  
+  nav a[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: currentColor;
+  }
+}
+
+/* Estilos específicos para componentes */
+@layer components {
+  /* Mejorar contraste en cards */
+  .card {
+    border: 1px solid #e5e7eb;
+    background-color: white;
+  }
+  
+  /* Mejorar botones */
+  .btn-primary {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-primary:hover {
+    background-color: #2563eb;
+  }
+  
+  /* Mejorar formularios */
+  .form-input {
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    min-height: 44px;
+    width: 100%;
+  }
+  
+  .form-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .form-input.error {
+    border-color: #dc2626;
+  }
+  
+  /* Mejorar modales */
+  .modal {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Mejorar carruseles */
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel-item {
+    min-height: 200px;
+  }
+  
+  /* Mejorar imágenes */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Mejorar tablas */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    border: 1px solid #e5e7eb;
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f9fafb;
+    font-weight: 600;
+  }
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .large-text {
+    font-size: 1.1em;
+  }
+  
+  .large-text h1 {
+    font-size: 2em;
+  }
+  
+  .large-text h2 {
+    font-size: 1.5em;
+  }
+  
+  /* Optimización de imágenes en móvil */
+  .optimized-image-container {
+    margin: 0 -1rem;
+  }
+  
+  .optimized-image {
+    border-radius: 0;
+  }
+}
+
+/* Soporte para modo oscuro del sistema */
+@media (prefers-color-scheme: dark) {
+  .high-contrast {
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+  }
+  
+  .high-contrast * {
+    background-color: black !important;
+    color: white !important;
+    border-color: white !important;
+  }
+  
+  .image-fallback {
+    background-color: #374151;
+    color: #d1d5db;
+    border-color: #4b5563;
+  }
+  
+  .skeleton {
+    background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  }
+}
+
+/* Soporte para preferencias de movimiento reducido del sistema */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .optimized-image {
+    transition: none;
+  }
+  
+  .lazy-load-image-background.blur {
+    filter: none;
+  }
+}

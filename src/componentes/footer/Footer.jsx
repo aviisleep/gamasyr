@@ -1,27 +1,29 @@
 import logoDorado from "../../assets/logos/logodorado.png";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { useT } from '../../hooks/useT';
 
 const Footer = () => {
+  const t = useT();
   const sections = [
     {
-      titulo: "Navega",
+      titulo: t('navega'),
       links: [
-        { name: "Home", url: "/" },
-        { name: "Quienes somos", url: "/postventa" },
+        { name: t('home'), url: "/" },
+        { name: t('quienesSomos'), url: "/postventa" },
       ],
     },
     {
-      titulo: "Servicios",
+      titulo: t('servicios'),
       links: [
-        { name: "Equipos", url: "/gallegos" }
+        { name: t('equipos'), url: "/gallegos" }
       ],
     },
     {
-      titulo: "Información",
+      titulo: t('informacion'),
       links: [
-        { name: "Contacto", url: "/contacto" },
-        { name: "Aviso de Privacidad", url: "/privacidad" },
-        { name: "Terminos y Condiciones", url: "/terminos" },
+        { name: t('contacto'), url: "/contacto" },
+        { name: t('avisoPrivacidad'), url: "/privacidad" },
+        { name: t('terminosCondiciones'), url: "/terminos" },
       ],
     },
   ];
@@ -45,17 +47,17 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="p-6 text-white bg-gray-800">
+    <footer className="p-6 text-white bg-gray-800 dark:bg-gray-900 transition-colors duration-300">
       <div className="container grid grid-cols-2 gap-4 mx-auto md:grid-cols-5 max-w-7xl">
         {/* Logo y Dirección */}
         <div className="col-span-2 text-center md:text-left">
           <div className="flex items-center justify-center gap-4 mb-4 md:justify-start">
             <img src={logoDorado} alt="Logo Gama" className="w-40" />
           </div>
-          <div className="mt-2 text-gray-400">
-            <p className="font-semibold">Administrativa</p>
+          <div className="mt-2 text-gray-400 dark:text-gray-300">
+            <p className="font-semibold">{t('administrativa')}</p>
             <p>Autopista Medellin K.M. 3 T.T.C. Oficina C60, Cota</p>
-            <p className="font-semibold mt-2">Servicio</p>
+            <p className="font-semibold mt-2">{t('servicio')}</p>
             <p>
               Autopista Medellin K.M. 2.2 500 metros por la entrada de parcelas
               cota, Cota
@@ -70,7 +72,7 @@ const Footer = () => {
             <ul>
               {section.links.map((link, idx) => (
                 <li key={idx} className="mb-1">
-                  <a href={link.url} className="text-gray-400 hover:text-white">
+                  <a href={link.url} className="text-gray-400 dark:text-gray-300 hover:text-white transition-colors duration-200">
                     {link.name}
                   </a>
                 </li>
@@ -81,7 +83,7 @@ const Footer = () => {
 
         {/* Redes Sociales */}
         <div className="flex flex-col items-center md:items-start">
-          <h3 className="mb-2 font-bold">Síguenos</h3>
+          <h3 className="mb-2 font-bold">{t('siguenos')}</h3>
           <div className="flex space-x-4">
             {socialMedia.map((media, index) => (
               <a
@@ -89,7 +91,7 @@ const Footer = () => {
                 href={media.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-gray-400"
+                className="hover:text-gray-400 dark:hover:text-gray-300 transition-colors duration-200"
               >
                 {media.icon}
               </a>
@@ -99,7 +101,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-6 text-center text-white">
-        Copyright ©2024 All rights reserved | Gama Carrocería & Remolques
+        {t('derechos')}
       </div>
     </footer>
   );

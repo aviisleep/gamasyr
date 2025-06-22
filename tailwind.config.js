@@ -7,6 +7,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     // Asegúrate de incluir todas las rutas relevantes de tus archivos.
   ],
+  darkMode: 'class', // Habilitar modo oscuro basado en clases
   theme: {
     extend: {
       keyframes: {
