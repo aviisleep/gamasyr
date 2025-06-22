@@ -221,7 +221,7 @@ const PostVenta = () => {
     
 
       {/* Empresas que confían en nosotros */}
-      <Empreqconfia />
+      {/* <Empreqconfia /> */}
 
       {/* Modal de Imágenes (ejemplo, ajustar según tu componente) */}
       {isModalOpen && (
