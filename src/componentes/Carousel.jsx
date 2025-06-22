@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import "./style.css"; // Asegúrate de que este archivo CSS esté en la misma carpeta
-import Gallegos1 from "../assets/imagenes/gallegos1.jpg";
-import Gallegos2 from "../assets/imagenes/gallegos2.png";
-import Gallegos3 from "../assets/imagenes/gallegos3.jpg";
+import Gallegos1 from "../assets/imagenes/gallegos1.webp";
+import Gallegos2 from "../assets/imagenes/gallegos2.webp";
+import Gallegos3 from "../assets/imagenes/gallegos3.webp";
 
 const Carousel = () => {
   const nextRef = useRef(null);

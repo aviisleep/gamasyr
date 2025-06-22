@@ -26,10 +26,6 @@ const PostVenta = () => {
     setIsModalOpen(true);
   };
 
-  // Example usage of openModal
-  const handleOpenModal = () => {
-    openModal(["https://example.com/image1.jpg", "https://example.com/image2.jpg"]);
-  };
 
   const fadeInVariant = {
     hidden: { opacity: 0, y: 50 },
@@ -87,13 +83,13 @@ const PostVenta = () => {
         </div>
       </motion.section>
 
-      {/* Sección de Servicios Destacados */}
+      {/* 🔧 MANTENIMIENTO TOTAL PARA TU FLOTA 🚛 */}
       <section className="py-20 bg-gray-100">
         <div className="max-w-6xl mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {/* Bloque 1 - Trailers */}
+            {/* Bloque 1 - Mantenimiento Total para tu Flota */}
             <motion.div
-              className="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl flex flex-col items-center p-6"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -102,22 +98,35 @@ const PostVenta = () => {
                 visible: { opacity: 1, y: 0, transition: { delay: 0.2, duration: 0.6 } },
               }}
             >
+              <div className="flex flex-col items-center text-center w-full">
+                <span className="text-lg md:text-xl mb-1 block">🔧 MANTENIMIENTO TOTAL</span>
+                <span className="text-lg md:text-xl mb-4 block">PARA TU FLOTA 🚛</span>
+              </div>
               <img
                 src={img1}
-                alt="Trailers"
-                className="w-full h-48 object-cover"
+                alt="Mantenimiento Total para tu Flota"
+                className="w-full h-48 object-cover mb-4 rounded"
               />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{t('postVentaCard1Titulo')}</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {t('postVentaCard1Descripcion')}
+              <div className="flex flex-col items-center text-center">
+                <p className="text-gray-700 dark:text-gray-300 mb-4 mt-2">
+                  En Camiones y Remolques GAMA, cuidamos cada detalle de tus vehículos con un servicio integral de mantenimiento:
                 </p>
+                <ul className="text-left text-gray-700 dark:text-gray-300 mb-4 space-y-1">
+                  <li>✅ <b>Preventivo:</b> Anticipamos fallas, alargamos la vida útil de tu equipo.</li>
+                  <li>✅ <b>Correctivo:</b> Reparamos con rapidez y calidad, minimizando tiempos muertos.</li>
+                  <li>✅ <b>Predictivo:</b> Diagnósticos avanzados para detectar fallas antes de que ocurran.</li>
+                </ul>
+                <ul className="text-left text-gray-700 dark:text-gray-300 space-y-1">
+                  <li>📍 Taller especializado en flotas de carga pesada</li>
+                  <li>🛠️ Personal técnico certificado</li>
+                  <li>📈 Enfocados en la eficiencia operativa de tu negocio</li>
+                </ul>
               </div>
             </motion.div>
 
             {/* Bloque 2 - Contenedores */}
             <motion.div
-              className="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl flex flex-col items-center p-6"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -126,22 +135,40 @@ const PostVenta = () => {
                 visible: { opacity: 1, y: 0, transition: { delay: 0.4, duration: 0.6 } },
               }}
             >
+              <div className="flex flex-col items-center text-center w-full">
+                <span className="text-lg md:text-xl mb-1 block">🔧 TALLER MULTIMARCA ESPECIALIZADO</span>
+                <span className="text-lg md:text-xl mb-4 block">EN SEMIRREMOLQUES 🚛</span>
+              </div>
               <img
                 src={img2}
                 alt="Contenedores"
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover mb-4 rounded"
               />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{t('postVentaCard2Titulo')}</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {t('postVentaCard2Descripcion')}
+              <div className="flex flex-col items-center text-center">
+                <p className="text-gray-700 dark:text-gray-300 mb-4 mt-2">
+                  En Camiones y Remolques GAMA, somos tu aliado en reparación, mantenimiento y alistamiento total para todo tipo de semirremolques, sin importar la marca.<br/><br/>
+                  Ofrecemos soluciones integrales en:
                 </p>
+                <ul className="text-left text-gray-700 dark:text-gray-300 mb-4 space-y-1">
+                  <li>🛠️ Reparaciones generales y estructurales</li>
+                  <li>🎨 Pintura profesional y acabados industriales</li>
+                  <li>⚙️ Sistemas hidráulicos y neumáticos</li>
+                  <li>🔌 Diagnóstico y reparación eléctrica</li>
+                  <li>🛞 Servicio completo de llantas y ejes</li>
+                </ul>
+                <ul className="text-left text-gray-700 dark:text-gray-300 mb-4 space-y-1">
+                  <li>🔍 Atención precisa, rápida y con altos estándares de calidad.</li>
+                  <li>💼 Servicio ideal para transportadores, flotas y empresas logísticas.</li>
+                </ul>
+                <ul className="text-left text-gray-700 dark:text-gray-300 space-y-1">
+                  <li>📍 Ubicados estratégicamente para atender tu operación</li>
+                </ul>
               </div>
             </motion.div>
 
             {/* Bloque 3 - Postventa */}
             <motion.div
-              className="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl flex flex-col items-center p-6"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -150,16 +177,34 @@ const PostVenta = () => {
                 visible: { opacity: 1, y: 0, transition: { delay: 0.6, duration: 0.6 } },
               }}
             >
+              <div className="flex flex-col items-center text-center w-full">
+                <span className="text-lg md:text-xl mb-4 block">🚛 SOLUCIONES INTELIGENTES PARA SEMIRREMOLQUES</span>
+              </div>
               <img
                 src={img3}
-                alt="Postventa"
-                className="w-full h-48 object-cover"
+                alt="Soluciones inteligentes para semirremolques"
+                className="w-full h-48 object-cover mb-4 rounded"
               />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{t('postVentaCard3Titulo')}</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {t('postVentaCard3Descripcion')}
+              <div className="flex flex-col items-center text-center">
+                <p className="text-gray-700 dark:text-gray-300 mb-4 mt-2">
+                  En Camiones y Remolques GAMA somos importadores directos de repuestos y accesorios especializados para optimizar las operaciones de carga y transporte.<br/><br/>
+                  Ofrecemos tecnologías que transforman tu operación:
                 </p>
+                <ul className="text-left text-gray-700 dark:text-gray-300 mb-4 space-y-1">
+                  <li>🔹 Sistemas de cargue a doble nivel (Maxiloda)</li>
+                  <li>🔹 Cámaras 360° para mayor visibilidad y seguridad</li>
+                  <li>🔹 Control remoto y monitoreo de flotas en tiempo real</li>
+                  <li>🔹 Accesorios para control de temperatura y carga sensible</li>
+                </ul>
+                <ul className="text-left text-gray-700 dark:text-gray-300 mb-4 space-y-1">
+                  <li>✅ Mayor eficiencia y trazabilidad</li>
+                  <li>✅ Menores tiempos de operación</li>
+                  <li>✅ Reducción de costos logísticos</li>
+                  <li>✅ Adaptabilidad a múltiples sectores</li>
+                </ul>
+                <ul className="text-left text-gray-700 dark:text-gray-300 space-y-1">
+                  <li>🔧 Pensado para empresas que buscan más control, seguridad y rendimiento en cada kilómetro.</li>
+                </ul>
               </div>
             </motion.div>
           </div>
